@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchical Inheritance</title>
+</head>
+<body>
+    <h1>Hierarchical Inheritance</h1>
+    <script type="text/Javascript">
+        class Area{
+            _pi=3.14; // protected Field
+            _area=0;
+
+            constructor(){
+                document.write("<br> Super Class Constructor");
+            }
+
+            showArea(){
+                document.write('<br> Area is not Defined..');
+            }
+        }
+
+        class circle extends Area {
+            #radious=0;
+            constructor(Value){
+                super();
+                this.#radious=Value;
+                document.write('<br> Circle extends Area');
+            }
+
+            // Override Parent Class method
+            showArea(){
+                this._area=this._pi*this.#radious*this.#radious;
+                document.write('<br> Area Of Circle = '+this._area)
+            }
+        }
+
+        class square extends Area {
+            #a=0;
+            constructor(Value){
+                super();
+                this.#a=Value;
+                document.write('<br> Square Extence Area');
+            }
+
+            // Override Parent Class method
+            showArea(){
+                this._area=this.#a*this.#a;
+                document.write('<br> Area Of Square = '+this._area)
+            }
+        }
+
+        class rectangle extends Area {
+            #l=0;
+            #b=0;
+            constructor(value1,value2){
+                super();
+                this.#l=value1;
+                this.#b=value2;
+                document.write('<br> Rectangle Extence Area');
+            }
+
+            // Override Parent Class method
+            showArea(){
+                this._area=this.#l*this.#b;
+                document.write('<br> Area Of Rectangle = '+this._area)
+            }
+        }
+
+
+        a=new Area(); // Constructor Calling
+        a.showArea();
+        
+        b=new circle(7); // Super Class constructor Calling
+        b.showArea();
+        
+        c=new square(7);
+        c.showArea();
+        
+        d=new rectangle(5,2);
+        d.showArea();
+    </script>
+</body>
+</html>

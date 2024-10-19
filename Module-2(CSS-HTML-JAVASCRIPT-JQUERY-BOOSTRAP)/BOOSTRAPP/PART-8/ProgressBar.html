@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../jQuery/jquery.slim.min.js"></script>
+    <script src="../jQuery/popper.min.js"></script>
+    <script src="../jQuery/bootstrap.bundle.min.js"></script>
+    <script src="../../JQUERY/jquery/jquery.js"></script>
+    <style>
+       .progress{
+        margin: 10px;
+       }
+       .progress-bar{
+        height: 18px;
+        background-color: #2196f3;
+        border-radius: 30px;
+        position: relative;
+        width: 0;
+        transition: 5s linear;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <strong>Progress Bars</strong>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div><br>
+        <div class="progress"> 
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div><br>
+        <div class="progress"> 
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </div><br>
+        <div class="progress"> 
+            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <strong>Div to progress Bar</strong>
+        <div class="progress">
+            <div class="progress-bar" style="width: 29%;">29%</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <strong>Colored Progress Bar</strong>
+        
+        <!-- blue -->
+        <div class="progress">
+            <div class="progress-bar" style="width: 10%;">10%</div>
+        </div>
+
+        <!-- Green -->
+        <div class="progress">
+            <div class="progress-bar" style="width: 20%;">20%</div>
+        </div>
+
+        <!-- Danger -->
+        <div class="progress">
+            <div class="progress-bar bg-danger" style="width: 30%;">30%</div>
+        </div>
+
+        <!-- warning -->
+        <div class="progress">
+            <div class="progress-bar bg-warning" style="width: 40%;">40%</div>
+        </div>
+
+        <!-- info -->
+        <div class="progress">
+            <div class="progress-bar bg-info" style="width: 50%;">50%</div>
+        </div>
+
+        <!-- white -->
+        <div class="progress">
+            <div class="progress-bar bg-white" style="width: 60%;">60%</div>
+        </div>
+
+        <!-- dark -->
+        <div class="progress">
+            <div class="progress-bar bg-dark" style="width: 70%;">70%</div>
+        </div>
+
+        <!-- light -->
+        <div class="progress">
+            <div class="progress-bar bg-light" style="width: 80%;">80%</div>
+        </div>
+
+        <!-- secondary -->
+        <div class="progress">
+            <div class="progress-bar bg-secondary" style="width: 90%;">90%</div>
+        </div>
+
+        <!-- success -->
+        <div class="progress">
+            <div class="progress-bar bg-success" style="width: 100%;">100%</div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <strong>Animated Progress Bar</strong>
+        
+        <!-- blue -->
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 10%;">10%</div>
+        </div>
+
+        <!-- Green -->
+        <div class="progress">
+            <div class="progress-bar  progress-bar-striped progress-bar-animated" style="width: 20%;">20%</div>
+        </div>
+
+        <!-- Danger -->
+        <div class="progress">
+            <div class="progress-bar bg-danger progress-bar-animated" style="width: 30%;">30%</div>
+        </div>
+
+        <!-- warning -->
+        <div class="progress">
+            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: 40%;">40%</div>
+        </div>
+
+        <!-- info -->
+        <div class="progress">
+            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 50%;">50%</div>
+        </div>
+
+        <!-- white -->
+        <div class="progress">
+            <div class="progress-bar bg-white progress-bar-striped progress-bar-animated" style="width: 60%;">60%</div>
+        </div>
+
+        <!-- dark -->
+        <div class="progress">
+            <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" style="width: 70%;">70%</div>
+        </div>
+
+        <!-- light -->
+        <div class="progress">
+            <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" style="width: 80%;">80%</div>
+        </div>
+
+        <!-- secondary -->
+        <div class="progress">
+            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width: 90%;">90%</div>
+        </div>
+
+        <!-- success -->
+        <div class="progress">
+            <div class="progress-bar bg-success" style="width: 100%;">100%</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <strong>Percentage Progress Bar</strong>
+        
+        <!-- blue -->
+        <div class="progress border">
+            <div class="progress-bar bg-danger progress-bar-striped" percent="10">10%</div>
+        </div>
+
+        <!-- Green -->
+        <div class="progress">
+            <div class="progress-bar  progress-bar-striped progress-bar-animated" percent="20">20%</div>
+        </div>
+
+        <!-- Danger -->
+        <div class="progress">
+            <div class="progress-bar bg-danger progress-bar-animated" percent="30">30%</div>
+        </div>
+
+        <!-- warning -->
+        <div class="progress">
+            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" percent="40">40%</div>
+        </div>
+
+        <!-- info -->
+        <div class="progress">
+            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" percent="50">50%</div>
+        </div>
+
+        <!-- white -->
+        <div class="progress">
+            <div class="progress-bar bg-white progress-bar-striped progress-bar-animated" percent="60">60%</div>
+        </div>
+
+        <!-- dark -->
+        <div class="progress">
+            <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" percent="70">70%</div>
+        </div>
+
+        <!-- light -->
+        <div class="progress">
+            <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" percent="80">80%</div>
+        </div>
+
+        <!-- secondary -->
+        <div class="progress">
+            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" percent="90">90%</div>
+        </div>
+
+        <!-- success -->
+        <div class="progress">
+            <div class="progress-bar bg-success"percent="100">100%</div>
+        </div>
+
+        <button type="button" id="button1" class="btn btn-primary">Toggle Animatio</button>
+    </div>
+    <script>
+        $(function(){
+            $("#button1").click(function(){
+                $('.progress-bar').each(function(){
+                    
+                    var percent = $(this).attr('percent');
+                    console.log(percent);
+                    $(this).css("width",percent+'%');
+                    $({animatedValue:0}).animate({animatedValue:percent}
+                        ,{
+                            duration:2000,
+                            step:function(){
+                                $(this).attr('percent',Math.floor(this.animatedValue)+"%");
+                                $(this).text($(this).attr('percent'));
+                            },
+                            complete: function(){
+                                $(this).attr('percent',Math.floor(this.animatedValue)+"%");
+                                $(this).text($(this).attr('percent'));
+                            }
+                        })
+                });
+            });
+        });
+    </script>
+
+
+<br>
+    <br>
+    <br>
+    <div class="progress">
+        <strong>Progress Bar in single Line</strong>
+        <div class="progress-bar" style="width: 10%;"></div>
+        <div class="progress-bar bg-success" style="width: 40%;">Free-space</div>
+        <div class="progress-bar bg-info" style="width: 50%;">Condinues space</div>
+        <div class="progress-bar bg-warning" style="width: 50%;">warning</div>
+        <div class="progress-bar bg-danger" style="width: 50%;">Danger</div>
+        <div class="progress-bar bg-white" style="width: 60%;">WHite</div>
+        <div class="progress-bar bg-secondary" style="width: 70%;">Secpndary</div>
+        <div class="progress-bar bg-light" style="width: 80%;">Light</div>
+        <div class="progress-bar bg-dark" style="width: 90%;">Dark</div>
+    </div>
+</body>
+</html>

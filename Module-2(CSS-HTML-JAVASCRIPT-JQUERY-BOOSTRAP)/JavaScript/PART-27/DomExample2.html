@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example Style Attributes</title>
+</head>
+<body>
+    <img src="Images/Image1.jpg" alt="Image1" id="image1" onmousemove="MouseMove()" onmouseout="MouseOut()">
+
+    <script>
+        function MouseMove(){
+            document.getElementById('image1').src='Images/Image2.jpg';
+        } 
+
+        function MouseOut(){
+            document.getElementById('image1').src='Images/Image3.jpg';
+        }
+    </script>
+</body>
+</html>

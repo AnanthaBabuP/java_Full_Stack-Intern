@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <h1>Query Selector</h1>
+    <ul>
+        <li class="item1">HTML</li>
+        <li class="item2">CSS</li>
+        <li class="item3" style="color: red;"><b>JAVASCRIPT</b></li><br>
+        <li class="item4" style="color: red;">JQUERY</li>
+        <li class="item5">Bootsrap</li>
+    </ul>
+    <script>
+        var x=document.querySelector('li'); // First Element
+        document.write("First Item Using Query Selector="+x.innerHTML);
+    
+        document.write("<br><br><p>Display All Item Using QuerySelector.</p>");
+        let listItems=document.querySelectorAll('ul>li');
+        for(i=0;i<listItems.length;i++){
+            document.write('<br>'+listItems[i].innerHTML);
+        }
+
+
+        var startItem = document.getElementsByTagName('ul')[0];
+        var firstChild = startItem.firstElementChild.innerHTML;
+        var lastChild = startItem.lastElementChild.innerHTML;
+
+        document.write('<br><br>First child of &lt;ul&gt; Tag='+firstChild);
+        document.write('<br>Last child of &lt;ul&gt; Tag='+lastChild);
+
+        document.write('<br><br><b> Display List having Style attribute</b>');
+
+        var style = document.querySelectorAll('li[style]');
+        for(i=0;i<style,length;i++){
+            document.write('<br>'+style[i].innerHTML);
+        }
+
+        var startItem = document.querySelector('.item1');
+        document.write('<br> First Siblings = '+startItem.innerHTML);
+        var nextSibling = startItem.nextElementSibling;
+        while(nextSibling){
+            document.write('<br>'+nextSibling.innerHTML);
+            nextSibling = nextSibling.nextElementSibling;
+        }
+
+        var lastItem = document.querySelector('ul').lastElementChild;
+        document.write('<br> Last Item = '+lastItem.innerHTML);
+        var prevSibling = lastItem.previousElementSibling;
+        while(prevSibling){
+            document.write('<br>'+prevSibling.innerHTML);
+            prevSibling = prevSibling.nextElementSibling;
+        }
+    </script>
+</body>
+</html>

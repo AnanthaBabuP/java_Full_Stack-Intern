@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Iterating Over an TypedArray</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            const msg=new Uint8Array([0x00,0xff]);
+            for(i of msg)
+                document.write(i+" ");
+        </script>
+    </body>
+</html>

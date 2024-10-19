@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Animation</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#Btn1').on('click',function(){
+                myAnimation();
+            });
+
+            $('#Btn2').on('click',function(){
+                $('img').toggle(5000);
+                $('#msg').text("Image Toggle...");
+            });
+
+            $('#Btn3').on('click',function(){
+                $('img').fadeIn(5000);
+                $('#msg').text("Image fadeIn...");
+            });
+
+            $('#Btn4').on('click',function(){
+                $('img').fadeOut(5000);
+                $('#msg').text("Image fadeOut...");
+            });
+
+            $('#Btn5').on('click',function(){
+                $('img').slideUp(5000);
+                $('#msg').text("Image slideUp...");
+            });
+
+            $('#Btn6').on('click',function(){
+                $('img').slideDown(5000);
+                $('#msg').text("Image slideDown...");
+            });
+        });
+
+        function myAnimation(){
+            $('img').animate({
+                height:'100px',
+                width:'100px'
+            },{ //Options Parameter
+                duration:5000,
+                complete:function(){
+                    $(this).animate({
+                        height:'200px',
+                        width:'200px'
+                    },5000,
+                function(){
+                    $('#msg').text('Animation Complited...');
+                });
+                },
+                start:()=>{
+                    $('#msg').text('Animation Starting Now..');
+                }
+            });
+        }
+    </script>
+
+    <style>
+        img{
+            width: 500px;
+            height: 500px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <button id="Btn1">Animation</button>
+    <button id="Btn2">Toggle</button>
+    <button id="Btn3">Fade In</button>
+    <button id="Btn4">Fadr Out</button>
+    <button id="Btn5">Slide Up</button>
+    <button id="Btn6">Slide Down</button>
+    <br><br><img src="../images/Cat.jpg" alt="Cat Image">
+    <br><p id="msg"></p>
+</body>
+</html>

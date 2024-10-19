@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window History Object</title>
+</head>
+<body>
+    <h1>Window History Object</h1>
+    <script>
+
+        function priviousPage(){
+            window.history.back();
+        }
+
+        function nextPage(){
+            window.history.forward();
+        }
+
+        function goToPage(){
+            var num= document.getElementById('num1').value;
+            alert(num);
+            window.history.go(num);
+        }
+    </script>
+
+    <input tabindex="3" type="button" value="backward" onclick="priviousPage()"><br>
+    <input tabindex="2" type="button" value="farward" onclick="nextPage()"><br><br>
+
+    <input tabindex="4" type="text" id="num1">
+    <input tabindex="1" type="button" value="go" onclick="goToPage()">
+
+    <script>
+        document.write('<br> History Length='+history.length)
+    </script>
+</body>
+</html>

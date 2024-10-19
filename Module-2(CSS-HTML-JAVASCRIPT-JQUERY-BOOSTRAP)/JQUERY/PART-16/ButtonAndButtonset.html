@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Method</title>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+        rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            $( "#button-1, #button-2, #button-3, #button-4" ).button();
+            $( "#button-5" ).buttonset();
+            $('#button-6').button({
+                icons:{
+                    primary:'ui-icon-locked'
+                },
+                text:false
+            });
+            $('#button-7').button({
+                disabled:true
+            });
+            $('#button-8').button({
+                icons:{
+                    primary:'ui-icon-gear',
+                    secondary:'ui-icon-triangle-1-s'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id = "button-1">A button element</button>
+    <input id = "button-2" type = "submit" value = "A submit button">
+    <a id = "button-3" href = "">An anchor</a>
+    <input type = "checkbox"  id = "button-4" >
+    <label for = "button-4">Toggle</label>
+    <br><br>
+    <div id = "button-5">
+        <input type = "checkbox" id = "check1">
+        <label for = "check1">Left</label>
+        <input type = "checkbox" id = "check2">
+        <label for = "check2">Middle</label>
+        <input type = "checkbox" id = "check3">
+        <label for = "check3">Right</label>
+      </div>
+      <button id="button-6">Button With Icon Only</button>
+      <button id="button-7">Button Disable</button>
+      <button id="button-8">Button With two icons</button>
+</body>
+</html>

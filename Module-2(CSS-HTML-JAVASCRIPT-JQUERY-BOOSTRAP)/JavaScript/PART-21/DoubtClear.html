@@ -1,0 +1,38 @@
+<!-- Call() you can reuse methods across different objects 
+                or 
+        handle varying numbers of arguments.
+
+Example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const car = {
+            brand: "Toyota",
+            model: "Corolla",
+            getDetails: function() {
+                return this.brand + " " + this.model;
+            }
+        };
+
+        const bike = {
+            brand: "Honda",
+            model: "CBR"
+        };
+
+        // Borrowing getDetails method from 'car' for 'bike'
+        console.log(car.getDetails.call(bike));  // Output: Honda CBR
+
+    </script>
+</body>
+</html>
+
+<!-- usage 
+Calling a function with a specific this value
+Inheriting methods from other objects
+Invoke functions with varying arguments -->

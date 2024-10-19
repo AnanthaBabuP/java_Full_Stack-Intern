@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterating Over the arguments in a functions</title>
+    <script type="text/javascript">
+        function myFunction(){
+            for(const arg of arguments){
+                document.write(arg+"<br>");
+            }
+            document.write("Total Arguments="+arguments.length)
+        }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        myFunction(1,2,3,4,5);
+    </script>
+</body>
+</html>

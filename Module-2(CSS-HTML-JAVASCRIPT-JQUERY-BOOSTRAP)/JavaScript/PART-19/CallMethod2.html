@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method Example2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var employee = {
+            details : function (){
+                return this.name +" : "+this.id;
+            }
+        }
+        var emp1={
+            name:"Anandh",
+            id:201
+        }
+
+        var emp2={
+            name:"Sarath",
+            id:211
+        }
+
+        var x= employee.details.call(emp1);
+        document.write('<br>Employee Detail:<br>'+x);
+        var x= employee.details.call(emp2);
+        document.write('<br>Employee Detail:<br>'+x);
+    </script>
+</body>
+</html>

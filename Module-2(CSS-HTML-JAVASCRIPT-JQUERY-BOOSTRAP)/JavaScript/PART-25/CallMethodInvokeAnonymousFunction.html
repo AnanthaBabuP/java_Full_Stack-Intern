@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call() Invoke an anonymous Function</title>
+</head>
+<body>
+    <h1>Call() Invoke an anonymous Function</h1>
+    <script>
+        const animal=[
+            {species:'Line',name:'king'},
+            {species:'Whale',name:'Fail'}
+        ];
+
+        for(i=0;i<animal.length;i++){
+            (function(i){
+                this.print=function(){
+                    document.write('<br>#'+i+' '+this.species+' : '+this.name)
+                }
+                this.print();
+            }).call(animal[i],i);
+        }
+    </script>
+</body>
+</html>

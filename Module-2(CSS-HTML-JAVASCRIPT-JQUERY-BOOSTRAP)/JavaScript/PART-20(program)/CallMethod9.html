@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call method 9 </title>
+    <!-- borrow method Using Call method -->
+</head>
+<body>
+    <script>
+        const car = {
+            name:'car',
+            start() {
+                document.write('<br> Start the :'+this.name);
+            },
+            speedUp(){
+                document.write('<br> speedUp the :'+this.name);
+            },
+            stop(){
+                document.write('<br> Stop the :'+this.name);
+            }
+        }
+
+        const aircraft = {
+            name:'Aircraft',
+            fly(){
+                document.write('<br>Fly : ' +this.name);
+            }
+        }
+
+        car.start.call(aircraft);
+        car.speedUp.call(aircraft);
+        car.stop.call(aircraft);
+        aircraft.fly.call(car);
+    </script>
+</body>
+</html>

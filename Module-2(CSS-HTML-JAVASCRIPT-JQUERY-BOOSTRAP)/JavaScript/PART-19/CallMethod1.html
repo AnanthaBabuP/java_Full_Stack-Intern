@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call method Example 1</title>
+</head>
+<body>
+    <script>
+        function sum(a,b) {
+            return a+b;
+        }
+
+        var result = sum.call(this,5,90);
+        document.write('<br>Sum of two values Using Call Method = '+result);
+        document.write('<br>Sum of two values Using Normal Method = '+sum(5,90));
+    
+        
+    </script>
+</body>
+</html>

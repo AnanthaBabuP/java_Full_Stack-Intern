@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Each With Array</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var color=['red','green','blue','orange','black','white'];
+        document.write("Passing Array Values to a Function using For Each Method..<br>");
+        color.forEach(myFunction);
+
+        function myFunction(value,index){
+            document.write("Index="+index+" : Value="+value+"<br>");
+        }
+
+        document.write("Printing Array values using for each without function...<br>");
+        color.forEach((value,index)=>{
+            document.write("index="+index+" : Value="+value+"<br>");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example for Attributes</title>
+</head>
+<body>
+    <h1>Web Programminmg Language</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <p id="demo"></p>
+    <script>
+        var x= document.getElementsByTagName('li');
+        document.getElementById('demo').innerHTML = '1st Item:'+x[0].innerHTML
+                    +'<br>2nd List Item = '+x[1].innerHTML
+                    +'<br>3rd List Item = '+x[2].innerHTML
+    
+        document.getElementById('demo').style.color='Orange';
+        x[0].style.color='red';
+        x[1].style.color='Blue';
+        x[2].style.color='Orange';
+        x[2].style.fontSize='20px';
+        x[2].style.borderStyle='dashed';
+        x[2].style.borderWidth='2px';
+        x[2].style.width='300px';
+        document.write('Size Of List : '+x.length);
+    </script>
+</body>
+</html>

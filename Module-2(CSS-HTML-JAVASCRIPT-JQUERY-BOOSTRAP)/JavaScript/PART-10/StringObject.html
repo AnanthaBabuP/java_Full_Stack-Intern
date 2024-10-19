@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Object</title>
+</head>
+<body>
+    <script>
+        var str='I Love India';
+        document.write('<br> String IS:'+str);
+        document.write('<br> Length Of Str:'+str.length);
+        document.write('<br> CharAt(3) Of Str:'+str.charAt(3));
+        document.write('<br> charCodeAt(3) Of Str:'+str.charCodeAt(3));
+        document.write('<br> Concat( More) Of Str:'+str.concat(' More'));
+        document.write('<br> IndexOf I Of Str:'+str.indexOf('I'));
+
+        document.write('<br> Last Index OF I Of Str:'+str.lastIndexOf('I'));
+        document.write('<br> Replace India to Japan Of Str:'+str.replace('India','Japan'));
+        document.write('<br> Match Love Of Str:'+str.match('Love'));
+
+        document.write('<br> Search Japan Of Str:'+str.search('Japan'));
+        document.write('<br> Slice 2,6 Of Str:'+str.slice(2,7));
+
+        arr=str.split(' ');
+        for(i=0;i<arr.length;i++)
+            document.write('<br>'+arr[i]);
+        document.write('<br> SubStr(2,4) of str:'+str.substr(2,4));
+        document.write('<br> SubString(2,6) of str:'+str.substring(2,6));
+        document.write('<br> LowerCase of str:'+str.toLowerCase());
+        document.write('<br> Uppoercase of str:'+str.toUpperCase());
+
+
+
+</script>
+</body>
+</html>

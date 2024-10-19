@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window handle</title>
+</head>
+<body>
+    <h1>Window Methods</h1>
+    <form action="">    
+        <input type="text" name="button1" value="Create New Window" onclick="OpenNewWindow()"><br><br>
+        <input type="text" name="button2" value="Close New Window" onclick="closeNewWindow()"><br><br>
+        <input type="text" name="button3" value="Close The Existing Window" onclick="window.close()">
+    </form>
+
+    <script>
+        var win;
+        function OpenNewWindow(){
+            win=window.open('',"MyWindow","width=500px,height=200px,screenX=100,screenY=100");
+            let h = win.outerHeight;
+            let w = win.outerWidth;
+            win.document.write('<br>Wnindow Name:'+win.name);
+            win.document.write('<br>Window Outer Height='+h+' : Width='+w);
+        }
+
+        function closeNewWindow(){
+            win.close();
+        }
+    </script>
+
+</body>
+</html>

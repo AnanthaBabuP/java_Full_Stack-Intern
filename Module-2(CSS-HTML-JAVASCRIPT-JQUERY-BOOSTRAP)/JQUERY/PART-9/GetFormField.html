@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Form Field using val()</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#b1').click(function(){
+                alert($('#name').val())
+            });
+
+            $('#b2').click(function(){
+                alert($('#class').val())
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>Get Form Field using val()</h1>
+    <fieldset>
+        <legend>Get Form Field</legend>
+        <p>Name  :<input type="text" id="name" value="Ananth"> </p>
+        <p>Class :<input type="text" id="class" value="Intern"></p>
+
+        <button id="b1">Get Name</button>
+        <button id="b2">Get Class</button>
+    </fieldset>
+</body>
+</html>

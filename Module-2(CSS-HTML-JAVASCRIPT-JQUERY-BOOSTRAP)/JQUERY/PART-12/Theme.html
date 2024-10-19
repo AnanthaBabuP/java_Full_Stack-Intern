@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Content</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head>
+<body>
+    <div data-role="page" id="pageOne" data-theme="a" data-icon="home">
+        <div data-role="header">
+            <h1>Inmakes</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <p>Text Link</p>
+            <a href="#">A Standard Text Link</a>
+            <a href="#" class="ui-btn">Link</a>
+            <p>A List View:</p>
+
+            <ul data-role="listview" data-autodividers="true" data-inset="true">
+                <li>
+                    <a href="#">Android</a>
+                </li>
+                <li>
+                    <a href="#">IOS</a>
+                </li>
+            </ul>
+            <label for="fullName">Input Field:</label>
+            <input type="text" name="fullName" id="fullName" placeholder="Name...">
+            
+            <label for="switch">Toggle Switch:</label>
+            <select name="switch" id="switch" data-role="slider">
+                <option value="on">ON</option>
+                <option value="off" selected>OFF</option>
+            </select>
+        </div>
+    </div>
+
+</body>
+</html>

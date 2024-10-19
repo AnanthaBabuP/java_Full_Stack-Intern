@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows Loaction Object</title>
+</head>
+<body>
+    <h1>Windows Location Object</h1>
+    <p id="orgin"></p>
+    <p id="host"></p>
+    <p id="hostname"></p>
+    <p id="href"></p>
+    <p id="pathname"></p>
+    <p id="port"></p>
+    <script>
+        location.assign("WindowsLocationObject.html");
+        let orgin=window.location.origin;
+        let host=window.location.host;
+        let hostName=window.location.hostname;
+        let href =window.location.href;
+        let pathname= window.location.pathname;
+        let port= window.location.port;
+
+        document.getElementById('orgin').innerHTML='Orgin='+orgin;
+        document.getElementById('host').innerHTML='HostName='+host;
+        document.getElementById('hostname').innerHTML='HostName='+hostName;
+
+        document.getElementById('href').innerHTML='Href='+href;
+        document.getElementById('pathname').innerHTML='pathname='+pathname;
+        document.getElementById('port').innerHTML='port='+port;
+    </script>
+</body>
+</html>

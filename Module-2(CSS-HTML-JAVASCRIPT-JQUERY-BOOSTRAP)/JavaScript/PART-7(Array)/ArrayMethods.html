@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Example for array methods</title>
+    </head>
+    <body>
+        <script>
+            var bikes=['Bajaj','TVS','Honda','Splender'];
+            var cars=['swift','Audi','Ford','BMW'];
+
+            // Length Check
+            document.write("<br>Bike Array Length ="+bikes.length);
+            document.write("<br><br>Car Array Length ="+cars.length);
+
+            // Declare Emplt Array
+            var vachile=[];
+
+            // Concat Method
+            vachile=bikes.concat(cars);
+
+            document.write("<br><br>Vehicles="+vachile);
+            document.write("<br><br>Cars="+cars);
+            document.write("<br><br>Bikes="+bikes);
+
+            // join
+            vachile=bikes.join('-');
+            document.write("<br><br>Join Vehicles="+vachile);
+
+            // Indexof
+            document.write("<br><br>Index of TVS="+bikes.indexOf('TVS'));
+
+            bikes.push('Activa');
+            bikes.unshift('BMW'); // Shift Position to the array starting
+            document.write("<br><br> Unshift And push Bikes="+bikes);
+
+            document.write("<br><br>Pop Last Element from Bikes= "+bikes.pop());
+            document.write("<br><br>Remove First Element From Bikes= "+bikes.shift());
+            document.write("<br><br>Sort Bikes ="+bikes.sort());
+            document.write("<br><br>Slice(1,3) From Cars= "+cars.slice(1,3));
+            document.write("<br><br>Print Bikes Using For Each method ");
+            bikes.forEach((b)=>{
+                document.write('<br>'+b);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling</title>
+    <style>
+        #s1{
+            color: azure;
+            background-color: slateblue;
+            width: 60px;
+            height: 35;
+            border-radius: 5px;
+        } 
+        #s1:hover{
+            color: azure;
+            background-color: mediumblue;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="fn">Enter First Name:</label>
+        <input type="number" id="fn" name="fn"><br><br>
+
+        <label for="ln">Enter Last Name:</label>
+        <input type="number" id="ln" name="ln"><br><br><br>
+   
+        <input type="submit" id="s1" value="submit" 
+            onclick="sum=parseInt(fn.value)+parseInt(ln.value);
+                alert(fn.value+' + '+ln.value+' = '+sum)">
+    </form>
+</body>
+</html>

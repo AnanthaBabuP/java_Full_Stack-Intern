@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Manipulation</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#myDiv').on('click',function(){
+                $('#myDiv').css('color','yellow'); // Setting the text color
+                $('p').css({
+                    'background-color':'red',
+                    'width':'400px'
+                });
+                alert($('p').css('background-color'));
+            });
+
+            $('#addDiv').on('click',function(){
+                $('#myDiv').toggleClass('blueDiv');
+            });
+
+            $('#removeDiv').on('click',function(){
+                $('#myDiv').removeClass('blueDiv');
+            });
+
+            $('#toggleP').on('click',function(){
+                $('p').toggleClass('myStyle');
+            });
+        });
+    </script>
+    <style>
+        .blueDiv{
+            background-color: blue;
+            margin: 10px 0 0 0;
+            height: 20px;
+        }
+        .myStyle{
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <p>This is first Paragraph</p>
+    </div>
+
+    <div>
+        <p>This is Second Paragraph</p>
+    </div>
+
+    <div>
+        <p>This is Third Paragraph</p>
+    </div>
+
+    <button id="addDiv">Add Div Class</button>
+    <button id="removeDiv">Remove Div Class</button>
+    <button id="toggleP">Toggle P class</button>
+</body>
+</html>

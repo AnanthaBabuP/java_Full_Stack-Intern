@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayinG Cards</title>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery-ui-1.14.0/jquery-ui.js"></script>
+    <script src="../jquery/jquery-ui-1.14.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../jquery/jquery-ui-1.14.0/jquery-ui.css">
+
+    <style>
+        .cards{
+            width: 100px;
+            height: 100px;
+            padding: 0.5em;
+            border: 5px solid blue;
+        }
+        #droplist{
+            margin: 50 0px;
+            width: 80%;
+            height: 300px;
+            border: 5px solid green;
+        }
+        .cards:hover{
+            border-color: red;
+        }
+        #cardlist{
+            width: 80%;
+            height: 300px;
+            border: 5px solid orange;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="cardlist">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/ace_of_diamonds.png" alt="card1" id="card1" class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/2_of_diamonds.png" alt="2" id="card2"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/3_of_diamonds.png" alt="3" id="card3"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/4_of_diamonds.png" alt="4" id="card4"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/5_of_diamonds.png" alt="5" id="card5"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/6_of_diamonds.png" alt="6" id="card6"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/7_of_diamonds.png" alt="7" id="card7"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/8_of_diamonds.png" alt="8" id="card8"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/9_of_diamonds.png" alt="9" id="card9"class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/10_of_diamonds.png" alt="10" id="card10" class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/king_of_diamonds.png" alt="King" id="cardKing" class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/queen_of_diamonds.png" alt="Queen" id="cardqueen" class="cards">
+        <img src="../images/Playing Cards/Playing Cards/PNG-cards-1.3/jack_of_diamonds.png" alt="Jack" id="cardJack" class="cards">
+    </div>
+    <div id="droplist"></div>
+</body>
+<script>
+    $(function(){
+        $('.cards').sortable({helper:'clone'}).disableSelection();
+        $('.cards').draggable();
+        $('.cards').selectable();
+        // $('.cards').draggable({containment:'#droplist'});
+        $('#droplist').resizable();
+
+    });
+</script>
+</html>

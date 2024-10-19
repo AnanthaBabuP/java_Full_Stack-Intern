@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Animation </title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            Animate()
+        })
+        function Animate(){
+            $('img').animate({
+                height:'100px',
+                width:'100px'
+            },{ //Options Parameter
+                duration:5000,
+                complete:function(){
+                    $(this).animate({
+                        height:'200px',
+                        width:'200px'
+                    },5000,
+                function(){
+                    $('#msg').text('Animation Complited...');
+                });
+                },
+                start:()=>{
+                    $('#msg').text('Animation Starting Now..');
+                }
+            });
+        }
+    </script>
+    <style>
+        img{
+            width: 500px;
+            height: 500px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="msg"></p>
+    </div>
+    <div>
+        <img src="../images/Cat.jpg" alt="Cat" >
+    </div>
+</body>
+</html>

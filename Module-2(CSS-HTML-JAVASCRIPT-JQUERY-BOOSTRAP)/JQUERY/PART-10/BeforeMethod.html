@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before() Method</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('.inner').before('<p>Ananth</p>')
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>JQuery Before Method()</h2>
+        <div class="inner">Hello, </div>
+        <div class="inner">Good bye, </div>
+    </div>
+    <br><br><hr>
+    <button>Add Text</button>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery-ui-1.14.0/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="../jquery/jquery-ui-1.14.0/jquery-ui.css">
+
+    <script>
+        $(function(){
+            $('#accordion-5').accordion({
+                disabled: false
+            });
+
+             $('input').each(function(){
+                $(this).change(function(){
+                    $(this).attr('id') == 'disableaccordion' ?
+                        $('#accordion-5').accordion( 'option','disabled',true) :
+                        $('#accordion-5').accordion( 'option','disabled',false)
+                });
+             });
+        });
+    </script>
+    <style>
+        #accordion-5{
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="accordion-5">
+        <h3>What is Java?</h3>
+        <div>
+            <p>
+                Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br>
+                It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built. <br>
+                New, innovative products and digital services designed for the future continue to rely on Java, as well.<br>
+                While most modern Java applications combine the Java runtime and application together, there are still many applications and even some websites that will not function unless you have a desktop Java installed. <br>
+                Java.com, this website, is intended for consumers who may still require Java for their desktop applications – specifically applications targeting Java 8. <br>
+                Developers as well as users that would like to learn Java programming should visit the dev.<br>
+                java website instead and business users should visit oracle.com/java for more information.
+            </p>
+        </div>
+        <h3>What is Java Plug-in software?</h3>
+        <div>
+            <p>
+                The Java Plug-in software is a component of the Java Runtime Environment (JRE). <br>
+                The JRE allows some applications written in the Java programming language to launch via some browsers. <br>
+                The Java Plug-in software is not a standalone program and cannot be installed separately.<br>
+            </p>
+        </div>
+        <h3>Why Use Java?</h3>
+        <div>
+            <p>
+                Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.) <br>
+                It is one of the most popular programming languages in the world <br>
+                It has a large demand in the current job market <br>
+                It is easy to learn and simple to use <br>
+                It is open-source and free <br>
+                It is secure, fast and powerful <br>
+                It has huge community support (tens of millions of developers) <br>
+                Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs <br>
+                As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa <br>
+
+            </p>
+        </div>
+        <h3>Why is Java Platform Independent?</h3>
+        <div>
+            <p>
+                Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is intended to let application developers write once and run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without recompilation. Java was first released in 1995 and is widely used for developing applications for desktop, web, and mobile devices. Java is known for its simplicity, robustness, and security features, making it a popular choice for enterprise-level applications.
+            </p>
+        </div>
+        <h3>How to Run Java Program?</h3>
+        <div>
+            <p>
+                Java is a popular, high-level, object-oriented programming language that was developed by James Gosling and his team at Sun Microsystems (now owned by Oracle Corporation) in the mid-1990s. It is widely used for developing various kinds of software, including web applications, desktop applications, mobile applications, games, and more.
+            </p>
+        </div>
+        <h3>Why Inmakes?</h3>
+        <div>
+            <ul>
+                <li>Life time Validity</li>
+                <li>Tranining by java profosionals</li>
+                <li>Get on Opportunity to Work on real time Project</li>
+                <li>One to one mentor to focus on each students</li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top: 30px;">
+        <input type="radio" name="disable" id="disableaccordion" value="disable">Disable Accordion
+        <input type="radio" name="disable" id="enableaccordion" checked value="enable">Enable Accordion
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>IFRAMEWITHFORM</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <iframe src="../PART-3(List,Hyperlink,image,marquee,Table Tags)/List.html" width="30%" height="200px"></iframe>
+
+    <fieldset style="width: 30%; border: 2px solid royalblue; border-radius: 2%;">
+        <legend>Login</legend>
+        <form>
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">FeMale</label>
+            <input type="radio" id="others" name="gender" value="others">
+            <label for="others">Others</label>
+            <br>
+
+            <label for="course">Select Course:</label>
+            <select id="course" multiple>
+                <option value="HTML">HTML</option>
+                <option value="XML">XML</option>
+                <option value="JAVA">JAVA</option>
+            </select>
+            <br>
+
+            <input type="checkbox" id="aggree">
+            <label for="aggree">Aggree That</label>
+            <br>
+
+            <input type="submit" id="submit">
+        </form>
+    </fieldset>
+</body>
+</html>

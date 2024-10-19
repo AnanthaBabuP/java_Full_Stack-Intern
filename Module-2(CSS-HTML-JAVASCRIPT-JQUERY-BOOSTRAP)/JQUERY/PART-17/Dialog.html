@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Dialog functionality</title>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+      <!-- CSS -->
+      <style>
+         .ui-widget-header,.ui-state-default, ui-button {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+         .invalid{
+            color: red;
+         }
+         textarea{
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+         }
+      </style>
+      
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            $( "#dialog" ).dialog({
+                title:'myDialogBox',
+               autoOpen: false,  
+               modal:true,
+               hide:'puff',
+               show:'slide',
+               buttons:{
+                OK:function(){
+                    $(this).dialog('close');
+                }
+               },
+               beforeClose:function(event,ui){
+                    if(!$('#terms').prop('checked')){
+                        event.preventDefault();
+                        $('[for = terms]').addClass('invalid')
+                    } else {
+                        $('[for = terms]').removeClass('invalid')
+                    }
+               },
+               width:600,
+               position:'center'
+            });
+
+            $( "#openBtn" ).click(function() {
+               $( "#dialog" ).dialog( "open" );
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+      <!-- HTML --> 
+      <div id = "dialog">
+        <p>You Must Accept these terms and conditions</p>
+        <textarea>An "I Agree" checkbox is a type of consent checkbox. 
+            Consent checkboxes don't need to explicitly say "I Agree." 
+            They just need to be clear that checking the box is giving consent. 
+            For example, a consent checkbox can say "Yes" or "OK" instead of "I Agree" and still be effective at obtaining consent.
+         </textarea>
+        <div>
+            <label for="terms">I accept the terms</label>
+            <input type="checkbox" id="terms">
+        </div>
+      </div>
+      <button id = "openBtn">Open Dialog</button>
+      <p>This window shows the example of modal dialog</p>
+      <label for="textbox">Enter Name:</label>
+      <input type="text">
+    </body>
+</html>

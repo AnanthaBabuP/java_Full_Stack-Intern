@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Overriding</title>
+</head>
+<body>
+    <h1>Method Overriding</h1>
+    <script type="text/Javascript">
+        class Area{
+            _pi=3.14; // protected Field
+            _area=0;
+
+            constructor(){
+                document.write("<br> Super Class Constructor");
+            }
+
+            showArea(){
+                document.write('<br> Area is not Defined..');
+            }
+        }
+
+        class circle extends Area {
+            #radious=0;
+            constructor(Value){
+                super();
+                this.#radious=Value;
+                document.write('<br> Sub Class Constructor');
+            }
+            // Mormal Method
+            getPi(){
+                document.write('<br> Pi Value is :'+this._pi)
+            }
+
+            // Override Parent Class method
+            showArea(){
+                this._area=this._pi*this.#radious*this.#radious;
+                document.write('<br> Area Of Circle = '+this._area)
+            }
+        }
+
+        a=new Area(); // Constructor Calling
+        b=new circle(7); // Super Class constructor Calling
+
+        a.showArea();
+        b.showArea();
+    </script>
+</body>
+</html>

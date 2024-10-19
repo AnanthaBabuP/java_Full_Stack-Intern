@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHandling Using JQuery</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button.singleClick').on('click',function(){
+                alert("alert Fire On Single Click Using Jquery...")
+            });
+            $('button.doubleClick').on('dblclick',function(){
+                alert("alert Fire On Using Mouse Double Click using Jquery...")
+            });
+
+            $('.mouseEnter').on('mouseenter',function(){
+                alert("You are Fire On Using Mouse Enter Jquery...")
+            });
+
+            $('.mouseleave').on('mouseleave',function(){
+                alert("You are Fire On Using Mouse Over Jquery...")
+            });
+
+            $('button.AddAlertButton_i').on('click',function(){
+                $('<br>    <button class="AddAlertButton_i">AddAlertButton_i !</button>').appendTo(document.body)
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Mouse Events</h1>
+    <button class="singleClick">singleClick !</button>
+    <button class="doubleClick">doubleClick !</button>
+    <button class="mouseEnter">mouseEnter !</button>
+    <button class="mouseleave">mouseleave !</button>
+    <hr>
+    <hr>
+    <button class="AddAlertButton_i">AddAlertButton_i !</button>
+</body>
+</html>

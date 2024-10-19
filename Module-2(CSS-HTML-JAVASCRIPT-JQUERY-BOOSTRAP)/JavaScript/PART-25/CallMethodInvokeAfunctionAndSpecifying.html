@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call method In JavaScript</title>
+</head>
+<body>
+    <h1>Using call() to invoke a function and specifying the context for 'this'</h1>
+    <script>
+        function greet(){
+            const replay=[this.animal,'typically sleep Between', this.sleepingDuration].join(' ');
+            document.write(replay);
+        }
+
+        const obj1={
+            animal:'Cats',sleepingDuration:'12 to 16 Hours'
+        };
+
+        greet.call(obj1); // Cats typically sleep 12 to 16 hours
+    </script>
+</body>
+</html>

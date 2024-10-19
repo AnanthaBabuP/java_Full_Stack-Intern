@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        fieldset{
+            border: 1px solid blue;
+            width: 500px;
+            height: 300px;
+            padding: 12px 24px;
+        }
+        input {
+            width: 200px;
+            height: 20px;
+            padding: 5px 12px;
+            border: 2px dotted;
+        }
+        label{
+            width: 200px;
+            float: left;
+        }
+        button{
+            margin: 4px;
+            padding: 4px 8px;
+        }
+    </style>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').on('click',function(){
+                let input1 = parseInt($('#input1').val());
+                let input2 = parseInt($('#input2').val());
+                if(input1 != null && input2 != null){
+                    var button_text = $(this).text();
+                    switch(button_text){
+                        case 'Addition':
+                            result=input1+input2;
+                            $('#output').val(result);
+                            break;
+                        case 'Subraction':
+                            result=input1-input2;
+                            $('#output').val(result);
+                            break;
+                        case 'Divistion':
+                            result=input1/input2;
+                            $('#output').val(result);
+                            break;
+                        case 'Multiplication':
+                            result=input1*input2;
+                            $('#output').val(result);
+                            break;
+                        case 'ModuloDivision':
+                            result=input1%input2;
+                            $('#output').val(result);
+                            break;
+                    }
+                } else {
+                    alert('Please Entere Inputs Properly!..')
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculation</legend>
+        <label for="input1">Enter the 1st Number:</label>
+        <input type="number" id="input1"><br>
+
+        <label for="input2">Enter the 2nd Number:</label>
+        <input type="number" id="input2"><br>
+
+        <label for="result">Show Result:</label>
+        <input type="number" id="output"><br>
+
+        <button>Addition</button>
+        <button>Subraction</button>
+        <button>Divistion</button>
+        <button>Multiplication</button>
+        <button>ModuloDivision</button>
+
+    </fieldset>
+</body>
+</html>

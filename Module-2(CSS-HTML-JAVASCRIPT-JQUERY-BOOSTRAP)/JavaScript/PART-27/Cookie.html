@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The page that remembers Your Name</title>
+    <script>
+        if(document.cookie.substring(0,2) != 'n='){
+            nam=window.prompt('Enter Your Name');
+            document.cookie = ' '+name+';';
+            document.cookie += 'expires= Sunday, 29-Sep-2024 06:00:00 GMT';
+        }
+    </script>
+</head>
+<body>
+    <h1>Here is Your Cookies</h1>
+    <hr>
+    <script>
+        index=document.cookie.indexOf(';');
+        nam=document.cookie.substring(0,index+1);
+        document.write('<b> Hello there ,</b>'+nam);
+    </script>
+</body>
+</html>

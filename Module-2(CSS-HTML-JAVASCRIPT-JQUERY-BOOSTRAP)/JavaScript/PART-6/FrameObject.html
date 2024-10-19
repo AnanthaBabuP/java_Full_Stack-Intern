@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frame Objects</title>
+    <script type="text/javascript">
+        function displayFrames(){
+            var frames = window.frames;
+            alert('Frame Length :'+frames.length);
+            for(i=0;i<frames.length;i++){
+                alert(document.getElementsByTagName('frame')[i].name);
+            }
+        }
+    </script>
+</head>
+<frameset rows="*,*" cols="*,*" border=5 borderColor="blue" onload="displayFrames()">
+    <frame src="WinndowDialogBox.html" name="frame1">
+    <frame src="../PART-1/ScriptInHead.html" name="frame2">
+    <frame src="../PART-1/ScriptInBody.html" name="frame3">
+    <frame src="../PART-1/InnerHtml.html" name="frame4">
+</frameset>
+<noframes></noframes>
+</html>

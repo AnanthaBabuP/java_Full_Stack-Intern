@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Select Content</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#text').click(function(){
+                $('p').text('The Quick <b>brown box</b> Jumbes Over the <b>lazy Dog</b>');
+            });
+            $('#html').click(function(){
+                $('p').html('The Quick <b>brown box</b> Jumbes Over the <b>lazy Dog</b>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Click on any buttons to see the result</p>
+    <button id="text">Set Text</button>
+    <button id="html">Set Html</button>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8" />
+      <link rel = "stylesheet" type = "text/css" 
+         href = "https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+			
+      <link rel = "stylesheet" type = "text/css" 
+         href = "../jquery/Pagepiling/jquery.pagepiling.css" />
+			
+      <link rel = "stylesheet" type = "text/css" 
+         href = "../jquery/PagePiling/PagePilingexamples.css" />
+
+      <script 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+      </script>
+
+      <script type = "text/javascript" 
+         src = "../jquery/Pagepiling/jquery.pagepiling.min.js">
+      </script>
+    <script>
+        $(document).ready(function(){
+            $('#pagepiling').pagepiling({
+                menu:'#menu',
+                anchors:['page1','page2','page3','page4'],
+                selectionsColor:['red','yellow','green','orange'],
+                navigation:{
+                    'position':'right',
+                    'tooltips':['page1','page2','page3','page4']
+                },afterRender: function(){
+                    // playing the video
+                    $('video').get(0).play();
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .section{
+            text-align: center;
+        }
+        #myVideo{
+            position: absolute;
+            z-index: 4;
+            right: 0;
+
+            bottom: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background-size: 100% 100%;
+            background-color: black;
+            background-position: center center;
+            background-size: contain;
+            object-fit: cover;
+        }
+        #section1 .layer{
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            left: 0;
+            top: 43%;
+            height: 100%;
+        }
+
+        #selection1 h1{
+            color:#fff
+        }
+        #infoMenu li a{
+            color : #fff;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="menu">
+        <li data-menuanchor="page1" class="active">
+            <a href="#page1">Page 1</a>
+        </li>
+
+        <li data-menuanchor="page2" >
+            <a href="#page2">Page 2</a>
+        </li>
+
+        <li data-menuanchor="page3" >
+            <a href="#page3">Page 3</a>
+        </li>
+    </ul>
+
+    <div id="pagepiling">
+        <div class="section" id="section1">
+            <video autoplay loop muted id="myVideo">
+                <source src="../2.Videos/Video1.mp4" type="video/mp4">
+                <source src="../2.Videos/Video2.webm" type="video/webm">
+            </video>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1>No Limits</h1>
+                <p>In Learning anything is posible</p>
+            </div>
+        </div>
+        <div class="section" id="section4">
+            <div class="intro">
+                <h1></h1>
+                <p>Simple And Easy to Learn</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

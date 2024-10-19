@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call method Example4</title>
+</head>
+<body>
+
+    <!-- Descripe Bound a function to an Object -->
+    <script>
+        let obj={a:10,b:20};
+
+        function sum(){
+            return this.a+this.b;
+        }
+
+        var x= sum.call(obj);
+        document.write("Result Call Method is="+x);
+        
+        var x= sum(obj);
+        document.write("<br>Result Normal Method is="+x)
+    </script>
+</body>
+</html>

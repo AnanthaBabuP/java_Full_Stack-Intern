@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calling Function Using HTML Event</title>
+    <script>
+        function showArea(length,breath){
+            this.length=length;
+            this.breath=breath;
+            
+            area=length*breath;
+            document.getElementById('AreaShow').innerHTML="Area of Rectangle is :"+area;
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;color: red; font-style: italic;">User-Defined Function</h1>
+    <form action="">
+        Enter The Length: <input type="number" id="length" name="length"><br>
+        Enter The Breath: <input type="number" id="breath" name="breath"><br>
+        <input type="button" value="ClaculateArea" onclick="showArea(length.value,breath.value)"><br>
+        <br><br>
+        <p id="AreaShow" style="color: palevioletred;"></p>
+    </form>
+</body>
+</html>

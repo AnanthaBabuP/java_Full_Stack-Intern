@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Autocomplete Functionality</title>
+    <link rel="stylesheet" href="../jquery/jquery-ui-1.14.0/jquery-ui.css">
+    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery-ui-1.14.0/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            var availbletext=[
+                'AutoCAD',
+                'ActiveScript',
+                'Bootsrap',
+                'c++',
+                'c#',
+                'javascript',
+                'java',
+                'mongoDB',
+                'MeterialUI',
+                'Perl',
+                'Python',
+                {lable:'visual Basic',value:'Vi'}
+            ];
+
+            $('#autocomplete-1').autocomplete({ 
+                source:availbletext,
+                autoFocus:true,
+                minLength:1,
+                delay:100
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <!-- HTML --> 
+    <div class = "ui-widget">
+       <label for = "autocomplete-1">Enter the Course Here: </label>
+       <input id = "autocomplete-1">
+    </div>
+ </body>
+</html>

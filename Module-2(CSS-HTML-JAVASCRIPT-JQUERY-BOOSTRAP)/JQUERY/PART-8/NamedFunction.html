@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Function</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#myDiv').on('mouseenter',myFunction);
+        });
+
+        var myFunction = function(){
+            alert('The Mouse Over There...');
+        }
+    </script>
+    <style>
+        #myDiv{
+            margin-top: 10%;
+            margin-left: 10%;
+            border: 2px solid blue;
+            width: 120px;
+            color: white;
+            background-color: pink;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">Hover Here..</div>
+</body>
+</html>

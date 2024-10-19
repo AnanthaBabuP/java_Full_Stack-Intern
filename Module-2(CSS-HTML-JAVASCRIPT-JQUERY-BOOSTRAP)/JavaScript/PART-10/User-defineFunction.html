@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User-defined Function</title>
+</head>
+<body>
+    <h1>User-define Function</h1>
+    <script>
+        function showArea(length,breath){
+            this.length=length;
+            this.breath=breath;
+            area=length*breath;
+            return area;
+        }
+
+        rect1=showArea(2,3); // Calling Function
+        document.write('<br>Area Of Rectangle1='+rect1); 
+        
+        rect2=showArea(6.5,3.8); // Calling Function
+        document.write('<br>Area Of Rectangle2='+rect2); 
+
+    </script>
+</body>
+</html>

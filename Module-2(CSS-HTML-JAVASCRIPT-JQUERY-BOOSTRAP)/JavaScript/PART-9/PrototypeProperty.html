@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Prototype</title>
+    <!-- 
+        Prototype Property
+            The Javascript prototype property allows You
+            to add new property to object constructors -->
+</head>
+<body>
+    <script>
+        function person(name,gender,age){
+            this.name=name;
+            this.gender=gender;
+            this.age=age;
+        }
+
+        p1=new person('Anandh','male',24);
+        document.write(p1.city); // Output:Undefined
+
+        // Using Prototype
+        person.prototype.city='madurai';
+        document.write('<br>'+p1.city);
+    </script>
+</body>
+</html>

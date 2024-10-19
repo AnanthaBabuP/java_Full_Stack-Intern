@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>
+            Iterating A MAP
+        </title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            const iterate=new Map([['a',1],['b',2],['c',3]]);
+            for(const entry of iterate){
+                document.write(entry+"<br>");
+            }
+            for(const[key,value] of iterate){
+                document.write(key+":"+value+"<br");
+            }
+        </script>
+    </body>
+</html>

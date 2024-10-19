@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery SerializeArray Method</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                var x = $('form').serializeArray();
+                $.each(x,function(i,field){
+                    $('#results').append(field.name+' : '+field.value);
+                });
+                $('#results').append('<br>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="">
+        First Name : <input type="text" name="FirstName" value="Kadhir"><br>
+        Last Name  : <input type="text" name="LastName" value="Aadhani"><br>
+    </form>
+    <button>Serialize form values</button>
+    <div id="results"></div>
+</body>
+</html>

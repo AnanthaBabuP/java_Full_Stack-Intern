@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Constructor</title>
+</head>
+<body>
+    <script>
+        // Assign Constructor
+        function person(name,gender,age){
+            this.name=name;
+            this.gender=gender;
+            this.age= age;
+            this.details=function(){
+                return this.name+" he is "+this.age+" Years Old";
+            };
+        }
+
+        p1= new person('Ananth','male',23);
+        document.write("<br> Type Of p1="+typeof(p1));
+        p2= new person('Ramya','female',21);
+        document.write("<br> Type Of p2="+typeof(p2));
+        document.write('<br>'+p1.name+" , "+p1.gender+" , "+p1.age+"<br>");
+        document.write('<br>'+p1.details()+"<br>");
+
+        document.write('<br>'+p2.name+" , "+p2.gender+" , "+p2.age+"<br>");
+
+        // Assing new Property []
+        person['name']='Jothipash';
+        person['gender']='male';
+        person['age']=20;
+        document.write('<br>'+person.name+" , "+person.gender+" , "+person.age+"<br>");
+
+        // length check
+        document.write('<br> length of person='+person.length+'<br');
+
+        // Inside Method Claling
+        document.write(person.details());
+</script>
+</body>
+</html>

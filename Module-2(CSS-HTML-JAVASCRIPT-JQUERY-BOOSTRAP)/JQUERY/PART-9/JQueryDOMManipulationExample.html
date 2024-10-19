@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate Dom Using jQuery</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#text').click(function(){
+                alert($('p').text());
+            });
+            $('#html').click(function(){
+                alert($('p').html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <p><b>brown box</b> Jumbes Over the <b>laze Dog</b></p>
+    <button id="text">Get Text</button>
+    <button id="html">Get Html</button>
+</body>
+</html>

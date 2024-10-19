@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Methods</title>
+</head>
+<body>
+    <script>
+        person={
+            name:'Ananth',
+            gender:'male',
+            age:30,
+            getName(){
+                return this.name;
+            },
+            getGender(){
+                return this.gender;
+            },
+            getAge(){
+                return this.age
+            }
+        }
+        document.write(person.getName()+" , "+person.getGender()+" , "+person.getAge()+"<br>");
+    </script>
+</body>
+</html>

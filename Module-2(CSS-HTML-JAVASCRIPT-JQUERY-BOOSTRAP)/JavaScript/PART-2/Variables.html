@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables(var,let,const)</title>
+    <script type="text/javascript">
+        var a; // Default value undefined[Global or Function Scop]
+        function f(){
+            let b; // Default value undefined[local(or) Bock Scop]
+            document.write("a="+ a+"<br");
+            document.write("b="+ b+"<br");
+
+            var a=10; // Can br redecure and updated
+            b=5; // can be updated not redeculare
+            
+            document.write("a=" + a+"<br");
+            document.write("b=" + b+"<br");
+
+            const pi=3.14;
+            document.write("PI = "+pi+"<br>");
+
+            pi=8.14; // Connot be redeclared and Updates
+            document.write("PI = "+pi+"<br>");
+
+        }
+    </script>
+</head>
+<body onload="f()">
+    
+</body>
+</html>

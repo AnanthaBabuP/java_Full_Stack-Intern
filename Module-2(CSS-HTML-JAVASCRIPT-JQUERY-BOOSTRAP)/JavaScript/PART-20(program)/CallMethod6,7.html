@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casll Method 6,7</title>
+</head>
+<body>
+    <script>
+        var messanger={
+            greeting:"hellow"
+        }
+        function say(name){
+            return document.write(this.greeting+" : "+name);
+        }
+
+        say.call(this,'Raja');
+
+        // 7. th Program
+        var greeting='hi';
+        var messanger={
+            greeting:"hellow"
+        }
+        function say(name){
+            return document.write('<br> '+this.greeting+" : "+name);
+        }
+
+        say.call(messanger,'Raja');
+    </script>
+</body>
+</html>

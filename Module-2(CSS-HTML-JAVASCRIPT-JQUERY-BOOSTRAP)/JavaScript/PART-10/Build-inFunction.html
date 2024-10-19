@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build In Function</title>
+</head>
+<body>
+    <h1>Build-in Function</h1>
+    <script>
+        let x=10;
+        let y=20;
+        let text='x*y';
+        let result=eval(text);
+        document.write('<br> IsNaN(hello)='+isNaN('Hello'));
+        document.write('<br> IsFinite(23/0)='+isFinite(23/0));
+        document.write('<br> Eval Result='+result);
+
+        let a=parseInt('25');
+        let b=parseFloat('23.05');
+        document.write('<br> Addition of a,b='+(a+b));
+        let uri="mypage.html?name=abbas&course=java";
+        let encode=encodeURI(uri);
+        document.write('<br> Encode Uri='+encode);
+        let decode=decodeURI(encode);
+        document.write('<br> Decode Encode Uri='+decode);
+    </script>
+</body>
+</html>

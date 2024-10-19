@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>For loop Iterate Object</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            const person = {'firstName': "John",'lastName':"Smith",'age':30};
+            for(const i in person)
+                document.write(i+":"+person[i]+"<br>");
+
+            for(const i of Object.entries(person))
+                document.write(i+"<br>")
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHandling Using JQuery</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('img').click(function(){
+                $('#msg').text('Mouse is clicked...');
+            });
+            $('img').dblclick(function(){
+                $(this).css('filter','invert(100%)');
+                $('#msg').text('Mouse is Double clicked...');
+            });
+
+            $('img').mousemove(function(){
+                $(this).css('filter','grayscale(0%)');
+                $('#msg').text('Mouse is Move Over image...');
+            });
+
+            $('img').mouseout(function(){
+                $(this).css('filter','grayscale(100%)');
+                $('#msg').text('Mouse is Move Out image...');
+            });
+        });
+    </script>
+    <style>
+        img{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            width: 500px;
+            height: 500px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/Cat.jpg" alt="">
+    <p id="msg"></p>
+</body>
+</html>

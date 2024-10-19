@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <title>jQuery UI Menu functionality</title>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+        rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    
+    <!-- CSS -->
+    <style>
+        .ui-menu {
+        width: 200px;
+        }
+        img{
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+    <!-- Javascript -->
+    
+    <script>
+        $(function() {
+            $( "#menu" ).menu();
+        });
+    </script>
+</head>
+   
+<body>
+    <!-- HTML --> 
+    <ul id = "menu">
+        <li><a href = "#">Front End</a>
+            <ul>
+                <li><a href = "#">HTML</a></li>
+                <li><a href = "#">CSS</a></li>
+                <li><a href = "#">JavaScript</a></li>
+                <li><a href = "#">jQuery</a></li>
+                <li><a href = "#">Bootsrap</a></li>
+            </ul>
+        </li>
+        <li><a href = "#">Java</a>
+            <ul>
+                <li><a href = "#">Core Java</a></li>
+                <li><a href = "#">Advance Java</a></li>
+                <li><a href = "#">Servlet</a></li>
+                <li><a href = "#">JSP</a></li>
+            </ul>
+        </li>
+        <li><a href = "#">Back-end</a>
+            <ul></ul>
+                <li><a href = "#">MySQL</a></li>
+                <li><a href = "#">JDBC Connection</a></li>
+            </ul>
+        </li>
+        <li><a href = "#">FrameWork</a>
+            <ul>
+                <li><a href = "#">Spring</a></li>
+                <li><a href = "#">Spring MVC</a></li>
+                <li><a href = "#">Spring Boot</a></li>
+                <li><a href = "#">Hibernet</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

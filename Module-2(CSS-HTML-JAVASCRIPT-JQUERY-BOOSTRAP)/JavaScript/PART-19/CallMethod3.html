@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call method Example3</title>
+</head>
+<body>
+
+    <!-- Use Of Function Call With Argumnet -->
+    <script>
+        var employee={
+            details:function(desgination,experiance){
+                return  "<br><br>Employee Id="+this.id+'<br>'+
+                        "Employee Name="+this.name+'<br>'+
+                        "Employee Desgination="+desgination+'<br>'+
+                        "Employee Experiance="+experiance
+            }
+        }
+
+        var emp1={
+            name:"Anandh",
+            id:201,
+        }
+
+        var emp2={
+            name:"Sarath",
+            id:211,
+        }
+
+        var x= employee.details.call(emp2,"Manager","10 Years");
+        document.write(x);
+
+    </script>
+</body>
+</html>

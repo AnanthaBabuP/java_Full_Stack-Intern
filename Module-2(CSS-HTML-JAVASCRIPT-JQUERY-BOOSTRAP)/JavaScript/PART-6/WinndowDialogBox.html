@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Dialog Box</title>
+</head>
+<body>
+    <h1>Window Dialog Box</h1>
+    <form>
+        <input type="button" id="button1" value="Display Alert" onclick="myFunction(1)"><br><br>
+        <input type="button" id="button2" value="Display Prompt" onclick="myFunction(2)"><br><br>
+        <input type="button" id="button3" value="Display Confirm" onclick="myFunction(3)"><br><br>
+    </form>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        function myFunction(buttonid){
+            switch(buttonid){
+                case 1:
+                    alert("This is alert box");
+                    break
+                case 2:
+                    var name= prompt("Enter Your name",null);
+                    alert("Your name is "+name);
+                    break;
+                case 3:
+                    const con=confirm("Would You Like Tea ?");
+
+                    if(con== true)
+                        document.getElementById("demo").innerHTML="You pressed Ok Button";
+                    else
+                        document.getElementById("demo").innerHTML="You pressed Cancel Button";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

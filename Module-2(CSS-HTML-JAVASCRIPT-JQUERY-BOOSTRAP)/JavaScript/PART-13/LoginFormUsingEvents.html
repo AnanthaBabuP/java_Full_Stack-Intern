@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn Form</title>
+    <style>
+        label{
+            float:left;
+            width: 4em;
+        }
+        input{
+            margin-left: 1em;
+            margin-bottom: 5em;
+            padding: 5px 5px;
+            border-radius: 5px;
+            border-color: #4682B4;
+        }legend{
+            background-color: #D2691E;
+            color: #fff;
+            padding: 3px 6px;
+            width: 100px;
+            text-align: center;
+        } fieldset {
+            padding: 12px 24px;
+            width: 200px;
+            border-color: red;
+            border-radius: 5px;
+        } 
+        #submit1 {
+            color: white;
+            border-radius: 5px;
+            width: 100px;
+            height: 30px;
+            background-color: #00BFFF;
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+        #submit1:hover{
+            background-color: #4169E1;
+        }
+    </style>
+    <script>
+        function valitate(){
+            if(document.forms[0].elements[0].value.length<1){
+                alert('userName Canot be Empty');
+                document.forms[0].elements[0].focus();
+            } else if(document.forms[0].elements[1].value.length<1){
+                alert('Password Canot be Empty');
+                document.forms[0].elements[1].focus();
+            } else if(document.forms[0].elements[0].value=='Ananth' && document.forms[0].elements[1].value=='password'){
+                alert('Log In SuccessFully')
+            } else{
+                alert('Invalid UserName And Password!...')
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset style="width: 300px;">
+        <legend>Login Form</legend>
+        <form>
+            <label for="userName">Username:</label>
+            <input type="text" autofocus><br>
+            <label for="Password">Username:</label>
+            <input type="Password" name="txtPwd"><br><br>
+            <input type="submit" name="submit" id="submit1" value="Login" onclick="valitate()"      >
+        </form>
+    </fieldset>
+</body>
+</html>

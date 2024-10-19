@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversal</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#myDiv').on('click',function(){
+                var fi= $('#myDiv');
+                fi.children().each(function(index){
+                    alert('Index :'+index+' , Html:'+$(this).html());
+                });
+                alert('Siblings  :'+fi.siblings().html());
+                alert('Children  :'+fi.children().html());
+                alert('Privious Element to div  :'+fi.prev().html());
+                alert('Next Element to div  :'+fi.next().html());
+                alert('Parent of inrDiv  :'+fi.parent().html());
+            });
+
+            $('p').each(function(index){
+                alert('Index :'+index+' , test:'+$(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>This is First paragraph.</p>
+    </div>
+    <div id="myDiv">
+        <p>This is second Paragraph.</p>
+        <div id="inrDiv">
+            <p>This is Third Paragraph. </p>
+        </div>
+        <div>
+            <ul>
+                <li>First</li>
+                <li>Second/li>
+                <li>Third</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <p>This is Fourth Paragraph.</p>
+    </div>
+</body>
+</html>

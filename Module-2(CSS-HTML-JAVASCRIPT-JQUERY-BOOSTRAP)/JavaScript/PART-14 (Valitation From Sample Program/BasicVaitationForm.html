@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign UP</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%); 
+            display: flex;
+            justify-content: center;
+        }
+        fieldset{
+            width: 300px;
+            height: 420px;
+            border-color: #B041FF;
+            padding: 12px 24px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        legend{
+            background-color: #c45aec;
+            color: #fff;
+            width: 200px;
+            font-size: 20px;
+            padding: 3px 6px;
+            text-align: center;
+            border-radius: 5px;
+        } 
+        label{
+            width: 400px;
+            height: 30px;
+            font-size: 40px;
+        }
+        #submit1{
+            margin-top: 30px;
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            width: 120px;
+            height: 30px;
+        }
+        #submit1:hover{
+            background-color: orange;
+        }
+        .err{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <fieldset>
+            <legend>SignUp</legend>
+            <form>
+                <div>
+                    <label for="txtUser">UserName:</label>
+                </div>
+                <div id="input">
+                    <input type="text" id="txtUser"  autocomplete="off">
+                </div>
+                <div class="err" id="error1"></div>
+
+                <div>
+                    <label for="txtEmail">Email:</label>
+                </div>
+                <div id="input">
+                    <input type="text" id="txtEmail"  autocomplete="off">
+                </div>
+                <div class="err" id="error2"></div>
+
+                <div>
+                    <label for="txtPassword">Password:</label>
+                </div>
+                <div id="input">
+                    <input type="password" id="txtPassword"  autocomplete="off">
+                </div>
+                <div class="err" id="error3"></div>
+
+                <div>
+                    <label for="txtConPassword">Confirm Password:</label>
+                </div>
+                <div id="input">
+                    <input type="password" id="txtConPassword"  autocomplete="off">
+                </div>
+                <div class="err" id="error4"></div>
+
+                <!-- submit button creation -->
+                 <input type="submit" id="submit1" name="submit" value="Register" onclick="return validate()">
+            </form>
+        </fieldset>
+    </div>
+
+    <script>
+        var user=document.getElementById('txtUser');
+        var email=document.getElementById('txtEmail');
+
+        email.addEventListener('focusout',valitatEmail);
+        var pass=document.getElementById('txtPassword');
+        var confirmPass=document.getElementById('txtConPassword');
+        function validate(){
+            if(user.value ==''){
+                document.getElementById('error1').innerHTML="UserName Cannot be Empty";
+                user.focus();
+                return false;
+            } else{
+                document.getElementById('error1').innerHTML='';
+            }
+
+            if(email.value == ''){
+                document.getElementById('error2').innerHTML="Email Cannot be Empty";
+                email.focus();
+                return false;
+            } else {
+                document.getElementById('error2').innerHTML='';
+            }
+
+            if(pass.value == ''){
+                document.getElementById('error3').innerHTML="Password Cannot be Empty";
+                pass.focus();
+                return false;
+            } else {
+                if(pass.value.length < 9){
+                    document.getElementById('error3').innerHTML='Password Require Minimum 8 characters';
+                    pass.focus();
+                    return false;
+                } else {
+                    document.getElementById('error3').innerHTML='';
+                }
+            }
+
+            if(confirmPass.value == ''){
+                document.getElementById('error4').innerHTML="Confirm Password Cannot be Empty";
+                confirmPass.focus();
+                return false;
+            } else {
+                if(confirmPass.value.length < 9){
+                    document.getElementById('error4').innerHTML=' Confirm Password Require Minimum 8 characters';
+                    confirmPass.focus();
+                    return false;
+                } else {
+                    document.getElementById('error4').innerHTML='';
+                }
+            }
+
+            if(confirmPass.value != pass.value){
+                document.getElementById('error3').innerHTML="Password Mismatch";
+                document.getElementById('error4').innerHTML="Confirm Password Mismatch";
+                pass.focus();
+                return false;
+            } else {
+                document.getElementById('error3').innerHTML='';
+                document.getElementById('error4').innerHTML='';
+            }
+
+            alert("Login Successfully");
+            return true;
+        }
+        function valitatEmail(){
+            emailId=email.value;
+            atpos = emailId.indexOf('@');
+            dotpos = emailId.indexOf('.');
+
+            if(atpos<1|| (dotpos-atpos <2)){
+                document.getElementById('error2').innerHTML='Please Enter Valid Email';
+                email.focus();
+                return false;
+            } else {
+                document.getElementById('error2').innerHTML='';
+                return(false);
+            }
+        }
+    </script>
+</body>
+</html

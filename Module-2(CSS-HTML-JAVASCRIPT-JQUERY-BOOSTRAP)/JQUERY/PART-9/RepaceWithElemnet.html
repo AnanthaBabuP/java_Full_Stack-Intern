@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace With Element</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#b1').click(function(){
+                $('p').replaceWith('<h1> This is new Paragraph</h1>');
+            });
+
+            $('#b2').click(function(){
+                $('h1').replaceWith('<h2> This is new Heading</h2>');    
+           });
+        });
+    </script>
+</head>
+<body>
+    <p>This is paragraph</p>
+    <button id="b1">Replace Paragraph</button>
+    <button id="b2">replace Heading</button>
+</body>
+</html>

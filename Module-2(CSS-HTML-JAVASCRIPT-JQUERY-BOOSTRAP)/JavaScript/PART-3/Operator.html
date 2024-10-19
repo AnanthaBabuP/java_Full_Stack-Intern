@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Operators</title>
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            a=1;
+            b=2.5;
+            c=true;
+            d="hellow";
+            x=(2,3);
+            
+            colors=new Array('red','green','blue');
+            person={firstName : 'Jhon',lastName:'smith',age:25};
+
+            document.write("Type of a="+typeof(a)+"<br>");
+            document.write("Type of b="+typeof(b)+"<br>");
+            document.write("Type of c="+typeof(c)+"<br>");
+            document.write("Type of d="+typeof(d)+"<br>");
+            document.write("Type of x="+typeof(x)+"<br>");
+            document.write("Type of Color="+typeof(colors)+"<br>");
+            document.write("Type of Persion="+typeof(person)+"<br>");
+            document.write("'FirstName' Persion =");
+            document.write('firstName' in person);
+            delete person.age;// Delete in Person
+
+            document.write("<br>"+"'Age' In Persion =");
+            document.write('age' in person);
+
+            document.write("<br>"+"'color' is Instand of Array =");
+            document.write('colors' instanceof Array);
+            document.write("<br>"+"'Persion' is instandof Object =");
+            document.write('person' instanceof Object);
+
+            function* showprice(i){
+                while(i<3){
+                    yield i++; // yeild operator
+                }
+            }
+
+            price=showprice(0);
+            document.write("<br>"+price.next().value);
+            document.write("<br>"+price.next().value);
+            document.write("<br>"+price.next().value);
+        </script>
+        <h2>Example Of Void</h2>
+        <a href="javascript.void(0);">Useless link</a><br>
+        <a href="javascript:void(document.body.style.backgroundColor='red');">Change background Color</a>
+    </body>
+</html>

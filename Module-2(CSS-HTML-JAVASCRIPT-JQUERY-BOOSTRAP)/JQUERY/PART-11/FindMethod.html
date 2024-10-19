@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find() Method</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('.grandparent').find('li').css('border','2px solid red');
+            });
+        });
+    </script>
+    <style>
+        .greate-grandparent *{
+            display: block;
+            border: 2px solid #aaa;
+            color: #aaa;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="greate-grandparent">
+        <div style="width: 500px;" class="grandparent">
+            <ul class="parent">
+                <li class="child-one">Child One</li>
+                <li class="child-two">Child Two</li>
+            </ul>
+        </div>
+        <div style="width: 500px;" class="grandparent">
+            <ul class="parent">
+                <li class="child-one">Child One</li>
+                <li class="child-two">Child Two</li>
+            </ul>
+        </div>
+    </div>
+    <button>Click Here</button>
+</body>
+</html>

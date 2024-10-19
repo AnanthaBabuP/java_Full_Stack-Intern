@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Of Object</title>
+</head>
+<body>
+    <script>
+        person=[
+            {
+            name:'Anandh',
+            gender:'male',
+            age:18
+            },
+            {
+            name:'Aadhi',
+            gender:'male',
+            age:23
+            },
+            {
+            name:'raja',
+            gender:'male',
+            age:25
+            },
+            {
+            name:'Sumathi',
+            gender:'female',
+            age:23
+            },
+        ];
+
+        document.write('<table border=1 width=200>');
+        document.write('<tr><th>Name</th><th>Gender</th><th>Age</th></tr>');
+        for(i=0;i<person.length;i++){
+            document.write('<tr><td>'+person[i].name+'</td><td>'+person[i].age+'</td><td>'+person[i].name+'</td></tr>');
+        }
+        document.write("</table>");
+    </script>
+    
+</body>
+</html>

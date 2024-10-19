@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selector</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                if($('#btn1').val() == "Hide Paragraph" ){
+                    $('p').hide();
+                    $('#btn1').val('Show Paragraph');
+                } else {
+                    $('p').show();
+                    $('#btn1').val('Hide Paragraph');
+                }
+            });
+
+            $('#btn2').click(function(){
+                if($('#btn2').val() == "Hide List" ){
+                    $('.ul_order').hide();
+                    $('#btn2').val('Show List');
+                } else {
+                    $('.ul_order').show();
+                    $('#btn2').val('Hide List');
+                }
+            });
+
+            $('#btn3').click(function(){
+                if($('#btn3').val() == "Hide DIV" ){
+                    $('#div1').hide();
+                    $('#btn3').val('Show DIV');
+                } else {
+                    $('#div1').show();
+                    $('#btn3').val('Hide DIV');
+                }
+            });
+        });
+    </script>
+    <style>
+        input{
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p> This is paragraph 1</p>
+    <p> This is paragraph 1</p>
+
+    <ul class="ul_order">
+        <li>HTML</li>
+        <li>HTML</li>
+        <li>HTML</li>
+    </ul>
+
+    <div id="div1">
+        <h1>This is div Element 1</h1><br>
+        <h1>This is div Element 2</h1><br>
+        <h1>This is div Element 3</h1><br>
+    </div> <br><hr><hr>
+    <input type="button" id="btn1" value="Hide Paragraph">
+    <input type="button" id="btn2" value="Hide List">
+    <input type="button" id="btn3" value="Hide DIV">
+</body>
+</html>
