@@ -1,0 +1,99 @@
+@charset "UTF-8";
+body {
+	background:url("images/image.jpg") no-repeat center fixed ;
+	background-size:cover;
+	text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.indexHref {
+	display:inline-block;
+	width:150px;
+	border: 2px solid green;
+	margin-top: 130px;
+	background-color: gray;
+	color:white;
+	border-radius: 5px;
+	box-shadow: 2px 2px aqua;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: lightgray;
+    border: 2px solid gray;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    background-color: none;
+}
+th {
+    width: 250px;
+}
+input[type="submit"], input[type="reset"] {
+    width: 100px;
+    margin: 5px;
+    font-size: large; 
+    color: white;
+    border-radius: 5px;
+}
+
+.registerbtn {
+	background-color: green;
+	border: 2px 2px green;
+}
+
+.restartbtn {
+	background-color: gray;
+}
+
+.editbtn {
+	background-color: orange;
+}
+
+.deletebtn {
+	background-color: red;
+}
+
+.addeventbtnmain {
+	background-color: green;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+	border-radius: 20px;
+}
+
+.successBox {
+	background-color: lightgray;
+	display: inline-block;
+	width: 20%;
+	height:25%;
+	border: 2px solid aqua;
+	border-radius: 5px;
+	margin-top: 50px;
+}
+
+.addeventbtn {
+	width: 120px;
+	border: 2px solid aqua;
+	background: aqua;
+	border-radius: 5px; 
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+	display:inline-block; 
+	margin-top: 10px;
+}
+span {
+	color: red;
+}
+
+h2 {
+    color: #333;
+}

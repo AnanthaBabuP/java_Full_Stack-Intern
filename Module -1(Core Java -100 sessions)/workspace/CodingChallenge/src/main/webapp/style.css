@@ -1,0 +1,81 @@
+@charset "UTF-8";
+div{
+	
+}
+
+body{
+	background: url("images/image.jpg") no-repeat center center fixed;
+    background-size: cover;
+	display: block;
+	height: 90vh;
+}
+
+fieldset {
+	background-image: url("images/image2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: inherit;
+    background-size: cover;
+	width: 340px;
+	height:500px;
+	display: inline-block;
+	margin-top: 10%;
+	border: 2px solid aqua;
+	border-radius: 5px;
+	box-shadow: 2px 2px aqua;
+	margin-left: 5%;
+}
+
+fieldset legend {
+	background:black;
+	border: 2px solid aqua;
+	box-shadow: 2px 2px aqua;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+span {
+	color: red;
+}
+
+.error {
+    color: red;
+    font-size:20px;
+    margin-top: 10px;
+    background-color: white;
+    margin-top: 20%;
+}
+
+table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders */
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px; /* Padding around table cells */
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Border around input fields */
+    border-radius: 4px; /* Rounded corners */
+}
+
+input[type="reset"],
+input[type="submit"] {
+	color: white;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	border-radius: 5px;	
+	box-shadow: 2px 2px aqua;
+	border: 3px solid aqua;
+	background-color: aqua;
+	margin-left: 20px;
+}

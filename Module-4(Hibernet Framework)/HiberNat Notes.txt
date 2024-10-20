@@ -1,0 +1,163 @@
+# Hibernate-in-Java
+Internship-Course
+
+Hibernate Introduction Part 1:
+    1. Hibernate :
+        Hibernate is a software .
+        Object-Relational Mapping Framework
+
+    2. Introduction to ORM (Object - Relational Mapping):
+        1. Fundmentally, application writen java Perform logic.
+        2. The Java Language providing fecilities for iterative with loop,conditional logic with if statment and object oriented analysis through the use of class and interfaces.
+        3. But Java application do not store date persistently.
+        
+        4. data persistence is typically delegated to relational database such as 
+            Open soure database MySQL or IBM's DB2 or Microsoft's SQL Server 
+            (OR) 
+            NoSQL databases such as mongodd and cassandra. 
+        5. To Address the object-relational impedance mismatch, a number of framework exist that simplify the task of moving data between a relational database and java application.
+        6. Some popular Object-relational Mapping Frameworks are Hibernate, Toplink and DataNucleus, etc.
+        7. While each framework has its own set of unique capabilities, all of them compiling with the Java persistance API Standard, Which is now Part of the Java EE/ jakarta EE (Web Application)specification.
+    3. Object-Realtional Mapping (Non persistence Object Stored in persistence type):
+        1. ORM is the process of converting java object to database tables.
+        *2. In other word , this allows to interact with a relational database without ant SQL.
+        3. The JAVA PERSISTENCE API (JPA) is a Specification that defines How to presist data in java Application.
+        4. The primary focus of JPA is the ORM layer.
+        5. Hibernate is one ogf the most popular java ORM framework in used today.
+        6. Additionally Hibernate is a Statard implementation of the JPA specification with a  few additional feauture that are specific to Hibernate.
+
+    4. Why Use Hibernate?
+        1. Reduce the line of code by maintaining Object-table mapping itself and returns result to application in form of java object.
+        2. It Relives programmer from manuval handling of presisent data ,hence reduce the developer time and maintenance cost.
+
+    5. Hibernate and JPA vs. JDBC:
+        JDBC(Java Database Connector) is an API packaged with the java SE Edition thsat makes   it possible to standardize and simplify hte process of connection java application to external, relational database management System(RDBMS).
+
+            S.NO    Tools                  Hibernate JPA Implementation                            JDBC
+            -------------------------------------------------------------------------------------------------------------------------------------------------------------
+            1       Purpose                Object-relational Mapping (ORM)                 DataBase Connectivity
+            2       Query Language         HibernateQueryLanguage(HQL) and                 Strecure Query Language(SQL)
+                                        Java Presistence Query Language(JPQL)   
+            3       Licence                     LGPL 2.1 ans ASL 2.0                            Oracle Licence 
+            4       Packaging      standalone JAR file alog with dependent libraries              Part of JAVA SE 
+            5       Caching             Build-in second-level caching                               No Caching 
+            6       Competitors      Toplink, EclipseLink, OpenJPA and ActiveJDBC                   ODBC,JDO     
+            7       Maintainer          JBoss by Red Hat                                              Oracle            
+            8       Relese              Initial Hibernate Relese in 2001;                         Relesed in 1997 as a part of java 1.1      
+                                JPA Relese in 2006;
+
+    6. Hibernate:
+        1. Hibernate is a Opensource java presisentce framework.
+        2. It perform powerful object-relational mapping and query database using HQL and SQL.
+        3. Hibernate is greate tool for ORM Mapping in java.
+        
+        4. It can cut down a lot of complexity and thus defaucts as well from your application, which may otherwise find a way to exist.
+        5. This is especially boon for developers with limited Knowlage of SQL.
+
+        6. Initialy started as an ORM Framework, Hibernate has  spun off into many projects, sucg as hibernate search, Hibernate valitation, Hibernate ORM(for No SQL database) ans so on.
+
+    7. Hibernate Architecure: - Refer to image
+
+    8. 5 Rules for generating POJO Class(or Data Transfer Object Class):
+        1. All data member must be private.
+        2. Must implement Serialable interfaces
+        3. Must have default Constructor
+        4. Must have getter/setter methods (Accessor/Mutator Methods)
+        5. class Must be non-final.
+
+Hibernate Introduction Part 2:
+    1. Hibernate Architecure:
+                1. Java Application
+
+                2. Peresistence Object:
+                    (Hibernate Interfaces)
+                        1. Configuration
+                        2. session Factory
+                        3. session
+                        4. Transaction
+                        5. Query
+                        6. Criteria
+                3. API:
+                    JTA -Java Transaction API
+                    JDBC = Java Database Connector
+                    JNDI = Java Naming and directory Interface
+                4. Data Base
+
+    2. Configuration:
+        1. It is a Class which is present it org.hibernate.cfg package .
+        2. It actives hibernate framework.
+        3. It reads both configuration file and mapping files.
+
+        4. It activate Hibernate framework.
+        5. Configuration confic = new Configuration();
+        6. It read Both cfg file and mapping files.
+        7. cfg.configure();
+        8. It check wherether the config file is syntacically correct or not.
+        9. If the config file is not valid then it will throw an exception.
+        10. If it is valid then create meta-data in memory and return the meta-data to object to represent the config file.
+    
+    3. Session Factory:
+        1. Session Factory is an Interface which is present in org.hibernate package.
+        2. It is Used to create session object.
+
+        3. It is immutable and thread-safe in nature.
+        4. buildSessionFactory() method gathers the meta-data which is in the cfg object.
+        5. From cfg object it takes the JDBC infornation and create a JDBC Connection.
+        6. SessionFactory factory = cfg.buildSessionFactory();
+    
+    4. Session:
+        1. Session is an interface ehich is present in org.hibernate package.
+        2. Session Object is created based on SessionFactory object ie. factory.
+        3. It opens the connection/session with database software throw hibernate framework.
+        4. It is light wight object and non thread-safe.
+        5. Session Object is used to CRUD Operations.
+        6. Session session = factory.buildSession();
+        7. Mehods of session:
+            1. Transaction beginTransacrion();
+            2. Transaction getTransaction()
+            3. Object get(Class className, Serialable id); -> SELECT
+            4. Object load(Class className, Serialable id); -> SELECT
+            5. void persist(Object);                         -> INSERT
+            6. Serialable save(Object);                      -> INSERT
+            7. void update(Object);                          -> UPDATE
+            8. void saveOrUpdate(object)                     -> INSERT OR UPDATE
+            9. void delete(Object)                            -> DELETE
+            10. void close()
+            11. void flush()
+            12. void disconnect() 
+                Disconnect the session from the current JDBC Connection.
+
+    5. Transaction:
+        1. Transaction Object is used wherever we perform any operation and based upon that operation there is some chage in database.
+        2. Transaction object is used to give the instruction to the database to make chages that happen because of operation as a Permanent by using commit() method.
+        3. Transaction tx = session.beginTransacrion();
+        4. tx.commit();
+
+    6. Query:
+        1. Query is an interface, that presents in org.hibernate package.
+        2. A Query instance is obtained by calling Session.createQuery();
+        3. This interface express some extra functionality beyond that provided by 
+            Sission.iterate() and 
+            Session.find():
+                1. A Particulare page of the result set may be selected by calling setMaxResult(), setFirstResult().
+                2. Named query parameter may be used.
+        4. Query query = session.createQuery().
+
+    7. Criteria: (Filter)
+        Criteria is simplifyed API for retreving entities by composing Criteria Object.
+        2. The Session is a factory for Criteria.
+        32. Criteria instance are useually updains  via factory methods on Restrictions.
+        4. Criteria criteria = createCriteria();
+
+Notes
+    1. logic - bussiness logic
+    2. Java class are Called:
+        POJO - Plain Old Java Object
+        (OR)
+        Model Class
+        (OR)
+        DTO - data Transfer Object
+    3. persistence:
+        Store data Permenantly
+    4. Non-persistence:
+        It is Store Data When Stored in limit of times,
