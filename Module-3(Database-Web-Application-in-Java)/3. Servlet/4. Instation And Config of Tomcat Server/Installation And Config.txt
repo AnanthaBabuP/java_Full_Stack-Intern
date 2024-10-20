@@ -1,0 +1,21 @@
+Tomcat Servlet Installation Process with eclipse:
+    1. Open eclipse -> Select workspace -> windows -> show view -> Other -> Servers -> Open 
+
+    2. New Server -> Apache -> select latest version -> next 
+    3. -> Click on Download and Install -> Select Tomcat Installation Directory 
+    (OR )
+    Most prepare 
+    -> Open browser -> tomcat server download -> open official link -> (Right side bar) Download -> Select related version -> Archive -> select latest version  -> /bin -> click to .exe or .zip file
+
+    -> After download -> click to open .exe file -> Next -> next -> Choose Component: Tomcat (service startup dick) (Optional) -> Host manager (Dick) -> next -> username, password(sample ('admin','admin')) -> next -> (Note this Download Directory) next -> installation process start -> Finish 
+
+    -> Back to eclipse -> Brows -> (Download Directory) -> tomcat-version select -> next -> Finish
+
+
+    (OR)
+    1. Open eclipse -> Select workspace -> windows -> show view -> Other -> Servers -> Open 
+    2. New Server -> Apache -> select latest version -> next 
+    3. Open browser -> tomcat server download -> open official link -> (Right side bar) Download -> Select related version -> Archive -> select latest version  -> /bin -> click to .zip file -> unzip to workspace folder -> back to eclipse
+    4. Browse _tomcat workspace location -> (If any require more then your installation version please download latest version java) next -> finish
+
+    5. Servers tab-> created server -> right click -> start

@@ -1,0 +1,581 @@
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 25
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select curent_user()
+    -> ;
+ERROR 1046 (3D000): No database selected
+mysql> select curent_user();
+ERROR 1046 (3D000): No database selected
+mysql> select current_user();
++----------------+
+| current_user() |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> create user 'inmakes' identified by 'Inmakes@123';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select user from mysql.user;
++------------------+
+| user             |
++------------------+
+| inmakes          |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.00 sec)
+
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 26
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select current_user();
++----------------+
+| current_user() |
++----------------+
+| inmakes@%      |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> alter user 'inmakes' identified by 'Inmakes@456';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> system mysql -u:'root' -p;
+Enter password: ***********
+ERROR 1045 (28000): Access denied for user ':'root''@'localhost' (using password: YES)
+mysql> yes
+    -> Ananth@1999
+    ->
+    ->
+    ->
+    ->
+    -> ^C
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 28
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 29
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 30
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mydb               |
+| mysql              |
+| performance_schema |
+| student_details    |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> set student_details
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show tables' at line 2
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| customer                  |
+| department                |
+| employee_1                |
+| employee_details          |
+| employee_details_main     |
+| forgintable               |
+| notnull                   |
+| orders                    |
+| student                   |
+| students                  |
+| uniontable_1              |
+| uniontable_2              |
+| vote                      |
++---------------------------+
+13 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+------------+--------------+-----------------------+---------+------+
+| ID | STUDENT_ID | STUDENT_NAME | EMAIL_ID              | PLACE   | AGE  |
++----+------------+--------------+-----------------------+---------+------+
+|  3 |       1001 | Anantha Babu | ananthababu@gmail.com | CHENNAI |   23 |
+|  5 |       1003 | Ashif        | ashif@gmail.com       | MADURAI |   23 |
+|  7 |       1005 | Bala         | bala@gmail.com        | KERALA  |   21 |
+|  6 |       1010 | Anitha       | anith@gmail.com       | TENKASI |   20 |
+|  8 |       1012 | Mugeswari    | mugeswari@gmail.com   | KERALA  |   23 |
+|  4 |       1015 | Ajith        | ajith@gmail.com       | MADURAI |   22 |
++----+------------+--------------+-----------------------+---------+------+
+6 rows in set (0.00 sec)
+
+mysql> grant insert on student_details.students to 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+ERROR 1045 (28000): Access denied for user 'inmakes'@'localhost' (using password: YES)
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 32
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select current_user();
++----------------+
+| current_user() |
++----------------+
+| inmakes@%      |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
+| student_details    |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| students                  |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> descripe students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'descripe students' at line 1
+mysql> describe students;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| ID           | int         | NO   | UNI | NULL    | auto_increment |
+| STUDENT_ID   | int         | NO   | PRI | NULL    |                |
+| STUDENT_NAME | varchar(50) | YES  |     | NULL    |                |
+| EMAIL_ID     | varchar(50) | YES  |     | NULL    |                |
+| PLACE        | varchar(50) | YES  |     | NULL    |                |
+| AGE          | int         | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into student(student_id,student_name,email_id) values (1007,'Immanvel','eman@gmail.com');
+ERROR 1142 (42000): INSERT command denied to user 'inmakes'@'localhost' for table 'student'
+mysql>  insert into students(student_id,student_name,email_id) values (1007,'Immanvel','eman@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> update students set age=23 where student_id=1007;
+ERROR 1142 (42000): UPDATE command denied to user 'inmakes'@'localhost' for table 'students'
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 33
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mydb               |
+| mysql              |
+| performance_schema |
+| student_details    |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| customer                  |
+| department                |
+| employee_1                |
+| employee_details          |
+| employee_details_main     |
+| forgintable               |
+| notnull                   |
+| orders                    |
+| student                   |
+| students                  |
+| uniontable_1              |
+| uniontable_2              |
+| vote                      |
++---------------------------+
+13 rows in set (0.00 sec)
+
+mysql> select * from student;
++------------+--------------+------------+------+--------+
+| student_id | student_name | department | AGE  | GENDER |
++------------+--------------+------------+------+--------+
+|       1001 | ANANTH       | SCIENCE    | 23   | MALE   |
+|       1002 | SARATHA      | 10TH       | 16   | FEMALE |
+|       1003 | RAJESH       | SCIENCE    | 21   | MALE   |
+|       1004 | STELLA       | 10TH       | 18   | FEMALE |
+|       1005 | GAYATHRI     | SCIENCE    | 18   | FEMALE |
++------------+--------------+------------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> system -u 'inmakes' -p;
+'-u' is not recognized as an internal or external command,
+operable program or batch file.
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 34
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select * from students;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
+| student_details    |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| students                  |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from students;
+ERROR 1142 (42000): SELECT command denied to user 'inmakes'@'localhost' for table 'students'
+mysql> show students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'students' at line 1
+mysql> SHOW GRANDS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GRANDS' at line 1
+mysql> SHOW GRAND;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GRAND' at line 1
+mysql> SHOW GRANDS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GRANDS' at line 1
+mysql> SHOW GRANTS;
++---------------------------------------------------------------+
+| Grants for inmakes@%                                          |
++---------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `inmakes`@`%`                           |
+| GRANT INSERT ON `student_details`.`students` TO `inmakes`@`%` |
++---------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SHOW GRANTS FOR 'ROOT'@'LOCALHOST';
+ERROR 1142 (42000): SELECT command denied to user 'inmakes'@'localhost' for table 'user'
+mysql>  SHOW GRANTS FOR 'INMAKES'@'LOCALHOST';
+ERROR 1142 (42000): SELECT command denied to user 'inmakes'@'localhost' for table 'user'
+mysql> SHOE GRANTS FRO 'inmakes';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SHOE GRANTS FRO 'inmakes'' at line 1
+mysql> show grants for 'inmakes';
++---------------------------------------------------------------+
+| Grants for inmakes@%                                          |
++---------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `inmakes`@`%`                           |
+| GRANT INSERT ON `student_details`.`students` TO `inmakes`@`%` |
++---------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> grant insert,select on student_details.students to 'root';
+ERROR 1142 (42000): SELECT, GRANT command denied to user 'inmakes'@'localhost' for table 'students'
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 35
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show grants;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Grants for root@localhost
+
+
+
+
+
+                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO `root`@`localhost` WITH GRANT OPTION
+
+
+                                               |
+| GRANT APPLICATION_PASSWORD_ADMIN,AUDIT_ABORT_EXEMPT,AUDIT_ADMIN,AUTHENTICATION_POLICY_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,FIREWALL_EXEMPT,FLUSH_OPTIMIZER_COSTS,FLUSH_STATUS,FLUSH_TABLES,FLUSH_USER_RESOURCES,GROUP_REPLICATION_ADMIN,GROUP_REPLICATION_STREAM,INNODB_REDO_LOG_ARCHIVE,INNODB_REDO_LOG_ENABLE,PASSWORDLESS_USER_ADMIN,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_APPLIER,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SENSITIVE_VARIABLES_OBSERVER,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SHOW_ROUTINE,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,TELEMETRY_LOG_ADMIN,XA_RECOVER_ADMIN ON *.* TO `root`@`localhost` WITH GRANT OPTION |
+| GRANT PROXY ON ``@`` TO `root`@`localhost` WITH GRANT OPTION
+
+
+
+
+
+                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> grand select on 'student_details.students' to 'inmakes';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'grand select on 'student_details.students' to 'inmakes'' at line 1
+mysql> grant select on student_details.students to 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 36
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select student_id from student_details.students;
++------------+
+| student_id |
++------------+
+|       1001 |
+|       1015 |
+|       1003 |
+|       1010 |
+|       1005 |
+|       1012 |
+|       1007 |
++------------+
+7 rows in set (0.00 sec)
+
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> revoke select on student_details from 'inmakes';
+ERROR 1046 (3D000): No database selected
+mysql> revoke select on student_details.students from 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> GRANT UPDATE STUDENT_DETAILS.STUDENTS TO 'INMAKES';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'STUDENT_DETAILS.STUDENTS TO 'INMAKES'' at line 1
+mysql> grant UPDATE,DELETE on student_details.students to 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SYSTEM MYSQL -U INMAKES -P;
+MYSQL: [ERROR] MYSQL: option '-P' requires an argument.
+mysql> SYSTEM MYSQL -U 'INMAKES' -P;
+MYSQL: [ERROR] MYSQL: option '-P' requires an argument.
+mysql> SYSTEM MYSQL -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 38
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show grants;
++-------------------------------------------------------------------------------+
+| Grants for inmakes@%                                                          |
++-------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `inmakes`@`%`                                           |
+| GRANT INSERT, UPDATE, DELETE ON `student_details`.`students` TO `inmakes`@`%` |
++-------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> system mysql -u 'root' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> revoke all on student_details.students from 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ************
+ERROR 1045 (28000): Access denied for user 'inmakes'@'localhost' (using password: YES)
+mysql> system mysql -u 'inmakes' -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show grants;
++-------------------------------------+
+| Grants for inmakes@%                |
++-------------------------------------+
+| GRANT USAGE ON *.* TO `inmakes`@`%` |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql>  DROP USER 'inmakes';
+ERROR 1227 (42000): Access denied; you need (at least one of) the CREATE USER privilege(s) for this operation
+mysql> system mysql -u root -p;
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 42
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> drop user 'inmakes';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show user mysql.user;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user mysql.user' at line 1
+mysql> show user from mysql.user;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user from mysql.user' at line 1
+mysql> select user from mysql.user;
++------------------+
+| user             |
++------------------+
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql>

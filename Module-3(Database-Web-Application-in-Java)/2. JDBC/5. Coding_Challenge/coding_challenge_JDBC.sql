@@ -1,0 +1,20 @@
+use coding_challenge;
+
+DROP TABLE EMPLOYEE;
+SELECT * FROM EMPLOYEE;
+CREATE TABLE EMPLOYEE(
+	NAME VARCHAR(50),
+	ADDRESS VARCHAR(20),
+	CONTACT_NUMBER VARCHAR(10),
+	SALARY DECIMAL(10,2),
+	AGE INT,
+	DESIGINATION VARCHAR(30)
+);
+
+INSERT INTO EMPLOYEE VALUES 
+('Ananth','Address -1',9876543210,32000.00,18,'SWDeveloper'),
+('Sarath','Address -2',9876543211,25000.00,21,'SWDeveloper'),
+('Kumar','Address -3',9876543212,4000.00,25,'WebDeveloper'),
+('Sekar','Address -4',9876543213,32000.00,18,'DataBase Admin'),
+('Raja','Address -5',9876543214,3000.00,21,'clark'),
+('Rajesh','Address -6',9876543215,50000.00,25,'Manager');

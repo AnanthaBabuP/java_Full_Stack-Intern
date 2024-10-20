@@ -1,0 +1,234 @@
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 44
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mydb               |
+| mysql              |
+| performance_schema |
+| student_details    |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| customer                  |
+| department                |
+| employee_1                |
+| employee_details          |
+| employee_details_main     |
+| forgintable               |
+| notnull                   |
+| orders                    |
+| student                   |
+| students                  |
+| uniontable_1              |
+| uniontable_2              |
+| vote                      |
++---------------------------+
+13 rows in set (0.00 sec)
+
+mysql> select * from department;
++---------+------------------------------+--------------+
+| DEPT_ID | DEPT_NAME                    | DEPT_HEAD    |
++---------+------------------------------+--------------+
+| CIV     | Civil Engineering            | Meganathan   |
+| CSE     | Computer Science Engineering | Swarnalath   |
+| ECE     | Electrical&Comm. Engineering | Dhanasekeran |
+| EEE     | Electrical & Electronic Engn | Mugilan      |
+| IT      | Information Technology       | Kalai veni   |
+| MECH    | Mechanical Engineering       | Meganathan   |
++---------+------------------------------+--------------+
+6 rows in set (0.00 sec)
+
+mysql> DELETE FROM DEPT_DETAILS;
+Query OK, 4 rows affected (0.01 sec)
+
+mysql> ROLLBACK();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()' at line 1
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SET AUTOCOMMIT=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO DEPT_DETAILS(1,'CHENNAI','TN01','HR');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'CHENNAI','TN01','HR')' at line 1
+mysql> INSERT INTO DEPT_DETAILS VALUES (1,'CHENNAI','TN01','HR');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
++---------+--------------+-----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
+Empty set (0.00 sec)
+
+mysql>  INSERT INTO DEPT_DETAILS VALUES (1,'CHENNAI','TN01','HR');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO DEPT_DETAILS VALUES (2,'COIBATURE','TN02','TECHNICAL');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
++---------+--------------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>  SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
++---------+--------------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> DELETE FROM DEPT_DETAILS;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
+Empty set (0.00 sec)
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM DEPT_DEATILS;
+ERROR 1146 (42S02): Table 'student_details.dept_deatils' doesn't exist
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
++---------+--------------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>  DELETE FROM DEPT_DETAILS;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO DEPT_DETAILS VALUES (1,'CHENNAI','TN01','HR');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SAVEPOINT A;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>  INSERT INTO DEPT_DETAILS VALUES (2,'COIBATURE','TN02','TECHNICAL');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SAVEPOINT B;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>  INSERT INTO DEPT_DETAILS VALUES (3,'SELAM','TN03','SELAM');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SAVEPOINT C;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO DEPT_DETAILS VSLUES(4,'MADURAI','TN04','MADURAI');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VSLUES(4,'MADURAI','TN04','MADURAI')' at line 1
+mysql> INSERT INTO DEPT_DETAILS VALUES(4,'MADURAI','TN04','MADURAI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SAVEPOINT D;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
+|       3 | SELAM        | TN03      | SELAM     |
+|       4 | MADURAI      | TN04      | MADURAI   |
++---------+--------------+-----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> ROLLBACK TO SAVEPOINT C;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>  SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
+|       3 | SELAM        | TN03      | SELAM     |
++---------+--------------+-----------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> ROLLBACK TO SAVEPOINT B;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
++---------+--------------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ROLLBACK TO SAVEPOINT A;
+ERROR 1305 (42000): SAVEPOINT A does not exist
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT_DETAILS;
++---------+--------------+-----------+-----------+
+| DEPT_ID | DEPT_ADDRESS | SEPT_CODE | DEPT_NAME |
++---------+--------------+-----------+-----------+
+|       1 | CHENNAI      | TN01      | HR        |
+|       2 | COIBATURE    | TN02      | TECHNICAL |
++---------+--------------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>

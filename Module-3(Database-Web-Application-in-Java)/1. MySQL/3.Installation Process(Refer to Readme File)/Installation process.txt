@@ -1,0 +1,10 @@
+3. My SQL Installation:
+    this pc -> right click -> Check System type(32 or 64 bit)
+        Then Check window
+        browser-> MySQL Download -> MySQL Download(First Link) ->Download(tab) -> MySQL Community(GPL Downloads) -> MySQL Installer for windows ->  window bit, MSI Installer -> No thanks, just start my download. -> downloaded start
+
+        After Download complete:
+        double click on download file -> Custom ->Next  -> Add My SQL SERVER, Workbench, shell(Optional), router, Documentation(Optional) ->Installation Path (Default)  -> Next -> Execute  -> continue ->next ->Finish ->Next -> Finish
+
+    If Server Doesn't Install in installation :
+        MySQL community server  -> Download MySQL Server->8.2.0(Version) ->same process in pre Download process

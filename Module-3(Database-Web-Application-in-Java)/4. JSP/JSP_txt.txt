@@ -1,0 +1,395 @@
+# Database-Web-Application-in-Java
+Internship-Course
+
+JSP INDEX CONTENT:
+1. Introduction To JSP
+    1. JSP = Java Server Pagess
+        1. JSP is a teqnology which is used to develop web pages by inserting java code into the HTML pages by making special JSP tag.
+        2. The JSP tag which allow java code to be include into it are <%-- -javacode -- -%>.
+        3. It can consist of HTML and XML with JSP action and commands.
+        4. It can be used as HTML Page, Which can be used in forms and registration pages with the dynamic content.
+        5. Dynamic Content include some fields like Dropbox,Checkbox,etc.Whose value will be fetched from the database.
+        6. We can share information across pages using request and response objects.
+        7. JSP can be used for separation of the view layer with the bussiness logic in the web Application.
+    2. JSP LifeCycle:
+        1. JSP Life Cycle is define as translation of JSP Page into servlet as a JSP Page needs to ve converted into servlet first order to process the service request.
+        2. The Life Cycle starts with the creation of JSP and ends with the disitegration of that.
+    3. Phases of JSP Life Cycle:
+        1. When the browser asks for a JSP,JSP engine first check whether it needs to compile the pages.
+        2. If the JSP is last compiled or the recent modification is done in JSP, Then the JSP engine compile the page.
+    4. Compilation process of JSP involves Three Steps:
+        1. Parsing of JSP
+        2. Turning JSP into Servlet.
+        3. Compiling the Servlet.
+    5. JSP Pages are more advantageous then servlet:
+        1. They are easy to maintain.
+        2. No recompilation or resevelopment is required.
+        3. JSP has access to entire API of JAVA.
+        4. JSP are extended version of Servlet.
+    6. Feature of JSP:
+        1. Coding in JSP is easy:- As it is  just adding JAVA code to HTML/XML.
+        2. Resuce in the length of code:- In JSP we use action tags, custom tags etc.
+        3. Connection to Database is easier:- It is easier to connect website to database and allows to read or write  data easily to the database.
+        4. Make Interactive web sites:- In this we can create dynamic web pages which is help user to intract in real time environment.
+        5. Portable,Powerful,Fliexible and easy to maintain:-as these are browser and server independent.
+        6. No Redeployment and No-reCompilation:- It is dynamic, Secure and platform independent so no need to re-compilation.
+        7. Extends to Servlet:- as it has all feauture of servlets, implicit object and custom tags.
+
+2. JSP-Scope-Scripting Elements
+    1. basic information:
+        1. The ability of a JSP object for use from a particular place of the application is define as the scop of thart JSP object.
+        2. Every object created in jsp page will have a scop.
+        3. Object scop in JSP is seperated in Four Parts of Scopes:
+            1. Page
+            2. Session
+            3. Request
+            4. Application  
+    2. Scopes and State Management:
+        1. Page:
+            1. 'page' Scope means, the JSP object can be accessed only from within the same page where it was created.
+            2. Scop of JSP object created using <jsp:useBean> tag is page.
+            3. JSP implicit objects out, exception, response, pageContent, config and page have 'page' Scope.
+        2. request:
+            1. A JSP create using 'request' scop can be accessed from any pages that serves the request.
+            2. More than one page can serve a single request.
+            3. The JSP object will be bound to the request object.
+            4. Implicit object request has the 'request' Scope.
+        3. Session:
+            1. 'session' Scope ,earns , the JSP object is accessible from page that belong to the same session from where it was created.
+            2. The JSP  object that is created using the session scope is bound to tje session object.
+            3. Implicit object has the 'session' Scope.
+        4. Application:
+            A SJP object created using the 'application' scope can be accessed from any page s across the application.
+            2. The JSP object os bound to the application object.
+            3. Implicit object application has the 'application' Scope.
+    3.  Elements:
+        1. Static Content
+        2. Scripting Elements
+            1. Scriptes
+            2. Declaration
+            3. Expressions
+            4. Comments
+        3. Directives
+            1. Page
+            2. include
+            3. Taglib
+        4. Action:
+            1. standard
+            2. Custom 
+    4. Scripting Elements Syntax: (Important)
+        1. Java Scriplets:
+            It allows  us to add any number of JAVA Code - variable and expressions.
+                <% java Code %>
+        2. Declaration: 
+            It is used to declare a variable
+            syntax;- <%! Dec var %>
+            Sample:- <%! String name="name"; %>
+        3. JSP Expression:
+            syntax:- <%= expressions %>
+            sample:- <%= num1 = num1+num2; %>
+        4. JAVA Comments:
+            syntax:- <%-- jsp Comments --%>
+
+3. Scripting Elements(Directive-Pages and Includes ):
+    This jsp directives are messages that tells the web container how to translate JSP page  into the corresponding servlet.
+    Three Types:
+        1. Page Directives
+        2. Include Directives.
+        3. Taglib Directives.
+    1. JSP Page Directives:
+        1.JSP page directive is used to define the propertys applying the JSP Page, 
+            Such as size of allocated buffer, imported package and clesses/interfaces, defining what type of page it is.
+        2. Syntax:
+            <%@ page attribute = "value" %>
+
+        3. Attributes:
+            1. language="scripting language"; // default scriptinlanguage "java"
+            2. extends="class name";
+            3. import="import list";
+            4. session="true/false";
+            5. buffer="none/sizekb"; // Default size is 8kb
+            6. autoFlush="true/false";
+            7. isThreadSafe="true/false"
+            8. info="info-text"
+            9. contentType="content Type" // default "text/html"
+            10. errorPage="err_url";
+            11. isErrorPage="true/false";
+            12. PageEncoding="value"
+            13. isELignored="true/falses"
+
+
+4. TagLib Directory:
+    1. basic Information:
+        1. The Taglib directory is used to menstion the library whose custom-define tags are being usedin the JSP.
+        2. It's major application is JSTL(Java Server page Tag Library).
+    2. Syntax:
+        <%@ taglib uri="taglib uri" prefix="value"%>
+    3. Atributes:
+        1. tagLibrary uri:
+            This attribute contains the URI of a Tag Library Descripor as a value.
+        2. prefix
+            It Contain unique prefix for indentify of custom tag.
+        3. Install JSTL 
+            step-1:
+                Download the binary distribution  from Apache Stadard Taglib and unpack the compresed files.
+            step-2:
+                To us ethe Standard Taglib from its jakarta Taglib distribution,simply copy the jar file in the distribution liobrary directory to your application's webapp/WEB-INF/lib directory.
+            
+            To Use any of library ,you must include a <Taglib> directory at the top of each JSP that use the library.
+        4. Classification of The JSTL tags:
+            1. Core tags:
+                <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+            2. Formating Tag
+            3. SQL tags
+            4. XML Tag
+            5. JSTL Functions
+        5. Core tags:
+            1. Syntax:- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+            2. Tags& Description (<c:?>)
+                1. out
+                2. set
+                3. remove
+                4. catch
+                5. If
+                6. choose
+                7. When
+                8. otherwise
+                9. import
+                10. foreach
+                11. forTokens
+                12. param
+                13. redirect
+                14. err
+        6. Formatting tags: 
+            1. basic Information:
+                The JSTL Formatting tags are used for formating display text, the date,the time and number for internationallize website.
+            2. Syntax:- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+            3. Tags & Description:
+                1. formatNumber
+                2. parseNumber
+                3. fromatDate
+                4. parseDate
+                5. bundle   
+                6. setLocal
+                7. setBundle
+                8. timeZone
+                9. setTimeZone
+                10. messages
+                11. requestEncoding  
+        7. SQL Tags: Refer to sample program
+            It used to Untracting with realtional database
+            syntax:- <%@ taglb prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %> 
+            Tags & Descriptions
+                1. setDataSource
+                2. query
+                3. update
+                4. param
+                5. dataparam
+                6. transaction
+
+        8. XML TagLibray:
+            XML= Extensible Markup Language.
+            The JSTL tags provide a JSP-centeic way of creating and manipulating the XML documents.
+            Syntax:- <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstc/xml" %>
+            tags & declareation:
+                1. out
+                2. parse
+                3. set
+                4. If
+                5. forEach
+                6. choose
+                7. When
+                8. otherwise
+                9. transform //  Applies an XSL transformation on a XML document.
+                10. param
+
+        9. JSP TagLibrary -JSTL Functions
+            1. String Class manipulation:
+            2. JSTL includes a number of Standard functions, most of which are common string manipulation function.
+            3. Syntax:- <%@ taglib prefix="fn" uri="http://java.sun.com/jsp.jstl/function" %>
+
+            Functions:
+                1. contains()
+                2. containsIgnoreCase()
+                3. endWith()
+                4. escaprXML()
+                5. indexOf()
+                6. join()
+                7. length()
+                8. replace()
+                9. split()
+                10. startWith()
+                11. subString()
+                12. subStringAfter()
+                13. toLowerCase()
+                14. toUpperCase()
+                15. trim()
+
+5. Action Tags:
+    1. Basic Information:
+        1. There are many JSp Action tags or elements.
+        2. Each JSP Action tag is used to perform some specific tasks.
+    2. Standard Action Tags:-11
+        1. jsp:include
+        2. jsp:useBean
+        3. jsp:setProperty
+        4. jsp:getProperty
+        5. jsp:forward
+        6. jsp:plugin
+        7. jsp:param
+        8. jsp:body
+        9. jsp:element
+        10. jsp:text
+        11. jsp:output
+
+        2.1: jsp:Include:
+            1. This action include reuires resourses like html, servlet and JSP.
+            2. This jsp:include defferant from jsp directive.
+            3. Include directive includes resourceses at the time of transaction, wereas include action include resourse dynamically at request time.
+            4. Action directives work well for static pages, whereas later work better for dynamic pages.
+            5. There are two Attributes:
+                1. page :-  Its value is the url of the require resource.
+                2. Fulsh :- It check that the buffer of the resource is flushed before it is inculded.
+            6. Syntax:
+                <jsp:include page="page URL" flush="true/false">
+        
+        2.2: jsp:useBean:
+            1. <jsp:useBean> standard action tag is use to establish a connection between a jsp page and java bean.
+            2. In web application of java, jsp and java bean communication is require in the following 2 case:
+                1. In a real time MVC Project, a model class (bussiness class) will set the data into javabean and a jsp(view) will read data from a bean and finally display it on the browser.
+                    In this class jsp to java bean communication is requied.
+                2. If multi jsp page need common java logic then it separate that java code into a bean and when we call the bean from jap.
+                    In this class also jsp to java bean communication is required.
+            3. Every java class is not a java bean automatically.
+            4. Qualification of java has to make a java Bean:
+                1. class must be public.
+                2. Class must contain default constructor.
+                3. Each private property of the class must have setter and getter or both methods.
+                4. A Class can at most implement Serializable interface. 
+            5. syntax:  
+                <jsp:useBean id="beanName" class="className" scope="page | request | session | application" />
+                id:
+                    id uniquely identifies bean in the specified scope.
+                class:
+                    create object of bean class.
+                scope:
+                    1. page:
+                        It is default that state that we can use bean within this JSP page.
+                    2. request:
+                        It is broader than a page as bean can be used from any page that process similar request
+                    3. Session:
+                        It has wide range than about as bean can be used from any pages in the same session.
+                    4. Application:
+                        It has the maximum range of bean can be used from any page present in the same application.
+        2.3: setProperty:
+            1. jsp:serProperty and getproperty are used in java beans.
+            2. It is used to modify the property of the bean.
+            3. It gets execute when new objects are created.
+            4. syntax:
+                <jsp:setProperty property="name" param="value" />
+        
+        2.4: getProperty:
+            1. This property is used to get the property of the bean.
+            2. It converts into a string and finally insert into the output.
+            3. Syntax:
+                <jsp:getProperty name="myName" property="someproperty" />
+        2.5: forward:
+            1. It is used to forward the request to another jsp or any staic java servelt.
+            2. Here the request can be forwarded with no parameter or with parameter.
+            3. Syntax:-
+                <jsp:forward page="Relative URL" />
+        2.6: Plug in:
+            1. plugin insert java object or embed tag into JSP Page.
+            2. It has three attributes:
+                1. type:bean
+                2. code: It is the name of the class file.
+                3. codebase: It is the directory of the name of the class file.
+            3. syntax:-
+                <jsp:plugin type="applet|bean" code="className" codebase="directoryNameofClassFile" />
+        2.7: param:
+            1. It sends parameters to a bean or applet.
+            2. It can also be said as the child object of  plugin .
+            3. syntax:-
+            <jsp:params>
+                <jsp:param name="___" value="___" />
+            </jsp:params>
+        2.8: Body:
+            1. The Body of an action is normally defined as the body tag.
+            2. then you can also define the body of an action using <jsp:body> standard action.
+            3. This is required one or more <jsp:attributes>,<jsp:element> appear in the body of the tag.
+            3.1: jsp:element:
+                This tag dynamically creates an XML element and adds it to the response.
+                It is useful primarily in jsp Document(JSP Page in XML syntax), where other approaches cannot be used because of the well -formedness requirement.
+            3.2: jsp:attributes:
+                It set to the attribute of the param
+        2.9: text:
+            It is used to write a template text in JSP pages and documents.
+            It will be contain template data.
+            The body of the template con not contain other elements.
+            It can have either text/EL(Expression Language) expression.
+            <%@ page ELIgnored="true/false" %>
+        2.10: output:
+            1. It element can only used for jsp document.
+            2. It OS modify the generated response.
+                1. doctype-root-element:-
+                    indicates the root element of XML.
+                2. Doctype-system :-
+                    Tells us document type which is generated in output
+            3. Syntax:  
+            <jsp:output doctype-root-element="__" Doctype-system="__" >
+
+    3. JSP Custom Tags:
+        1. Basic Information:
+            1. User-Defined tags are Know as Custom tags.
+            2. These tags are mainly used for code re-useable.
+        2. How to use Custom Tag?
+            <prefic:tagname attributeName=AttributeValue />
+            1. A Custom Tag may have zero are n attributes.
+        3. We need three things to create custom tag:
+            1. Tag Handler class
+            2. TLD file
+            3. JSP Page 
+
+            3.1: Tag Handler class:
+                1. It is used to write the action for ther custom tag.
+                2. Our tag handler class inherit the TagSupport class.
+                3. Custom Tag action will be written in the doStartTag() method of TagSupport class
+            3.2: TLD file:
+                Tag Library Descriptor file where we will specify our ta name, tag handler class , and tag attributes.
+                commonly used attributes in TLD File:
+                    <name> :- Name of custom tag
+                    <tag-class> :- Filly qualified name of the tag handler class.
+            
+            3.3: JSP Page:
+                A JSP page where we will using our custom tag.
+6. Expression Language in JSP:
+    1. We saw earilier postd, how we can use scriptlet and JSP expressions to retrive attributes and parameters in JSP with java code and Use it for view perpose.
+    2. But for web designer ,java code is hard to understand and that why JSP specs 2.0 introduces Expression Language(EL) through which we can get attributes and parameters easier using HTML tags.
+    3. Syntax:
+        ${name}
+    4. JSP Expression Language- JSP EL Reserve Words:
+        1. and
+        2. or
+        3. not
+        4. eq/ne
+        5. lt
+        6. gt
+        7. le
+        8. ge
+        9. true
+        10. false
+        11. null
+        12. empty
+        13. div,mod
+
+7. MVC approach Rules:
+    1. Must class extends Serializable interface
+    2. Fields must be private  
+    3. Must have default constructor
+    4. Must have getter /setter methods.  
+    
+Note:
+    HTML(pre defined tags) - used to Design the web page.
+    XML(user defined Tags) - Entity of content.
+    XSL = Extensible style sheet language. 
+    TLD = Tag Library Descriptor.   
