@@ -23,7 +23,7 @@ Hibernate Introduction Part 1:
         *2. In other word , this allows to interact with a relational database without ant SQL.
         3. The JAVA PERSISTENCE API (JPA) is a Specification that defines How to presist data in java Application.
         4. The primary focus of JPA is the ORM layer.
-        5. Hibernate is one ogf the most popular java ORM framework in used today.
+        5. Hibernate is one of the most popular java ORM framework in used today.
         6. Additionally Hibernate is a Statard implementation of the JPA specification with a  few additional feauture that are specific to Hibernate.
 
     4. Why Use Hibernate?
@@ -125,7 +125,7 @@ Hibernate Introduction Part 2:
             10. void close()
             11. void flush()
             12. void disconnect() 
-                Disconnect the session from the current JDBC Connection.
+                Disconnect the session fro n.
 
     5. Transaction:
         1. Transaction Object is used wherever we perform any operation and based upon that operation there is some chage in database.
@@ -146,8 +146,106 @@ Hibernate Introduction Part 2:
     7. Criteria: (Filter)
         Criteria is simplifyed API for retreving entities by composing Criteria Object.
         2. The Session is a factory for Criteria.
-        32. Criteria instance are useually updains  via factory methods on Restrictions.
+        3. Criteria instance are useually updains  via factory methods on Restrictions.
         4. Criteria criteria = createCriteria();
+
+Hibernate CRUD Part 1:
+    1. Create Hibernate project using Eclipse IDE:
+        1. Create Java project.
+        2. Add jar file for Hibernate.
+        3. Create presetent class.
+        4. Create Mapping file for presetent Class.
+        5. Create the configuration file.
+        6. Create the Class that retrive or stored the persistent Object.
+        7. Run the Application.
+
+    1. Create Java Project;
+        File -> New -> Project -> Java Project. 
+
+Hibernate HQL Part 1:
+    Hibernate Query Language:-
+        Hibernate provide in query Language is called as Hibernate Query Language(HQL).
+        HQl is an object-orientat query language, similare ti the native SQL Language, and it work with persist object.
+
+    2. Advantage:
+        Database Independent-HQL is a Database Independent Query language.
+        That means if we write programs using HQL Comments, then the program can be executed in akk relational databases without any modification.
+
+Hibernate Annotations
+    Youtupe Referance:
+        Tag based Information.
+    
+    Common 6 Anotations are:
+        1. Entity
+        2. Table
+        3. Column
+        4. Id
+        5. GenericGenerator
+        6. GenertedValue
+    1. @Entity:
+        It Consider to all veriable are tale columns
+    2.@Table:
+        This anotation is used to create and indentyfy the table in database.
+    3.@Id:-
+        This anotation is consiter to primary key column in the table.
+    4. @Column(name = "columnName")
+        It declare to store a column for table
+    5. @GenericGenerator(name="ref name" strategy="increment"):-
+        It is declare to auto  increment Process.
+    6. @GeneratedValue (generator = "ref"):
+        It refer to GenericGenerator process
+
+Hibernate Relationship Part 1:
+    1. Hibernate Relationship:-
+        1. Using Hibernate, if we want to put relationship between two entities[Object of two pojo].
+        2. Then the database tables ,they are mist exist forgin key relationship.
+        3. we call it as Referential integrity.
+    
+    2. 4 Type of relationship: (Refer to Images)
+        1. One-To-One
+        2. One-To-Many
+        3. Many-To-One
+        4. Many-To-Many 
+    
+Hibernate CACHE Part 1:
+    1. Hibernate Caching/Cache:
+        1. It is a mechanism to enhance the performence of the System.
+        2. It is buffer memory that lies between the application and the database.
+        3. Cach memory store recentlyused Data item in order to reduce the number of database hits as much as posible.
+
+    2. In order to rovide second level cache it will provide the Third party libraries.
+        1. ehcache
+        2. OS cache
+        3. Swarm Cache
+    
+    3. We will used on eh cache:
+        1. First thing: 
+            In Order to get ehcache you have download the library called ehcache.jar
+            2. Also downloaf jar file called hibernate-ehcache.jar file
+
+            3. Feauture:
+                Hibernat-ehcache.jar provide integrity of eh and hibernate.
+        2. Second thing:
+            you have configure hibernat.cfg.xml
+            2. By default second level cache is disable so you enable it by using <>.
+        3. Third Thing:
+            1. You have chage the entity by using Annotations:
+                @Cacheable
+                @Cache
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Notes
     1. logic - bussiness logic
@@ -161,3 +259,9 @@ Notes
         Store data Permenantly
     4. Non-persistence:
         It is Store Data When Stored in limit of times,
+
+WEBINER:
+Association Mapping:
+    Association Mapping refer to the process of defining relationship between two or more entities(tables).
+    This Relationship represent the association between object in an object oriented model and their corresponting database table in the relational model.
+    Types of Association mapping:
