@@ -8,7 +8,8 @@ Hibernate Introduction Part 1:
 
     2. Introduction to ORM (Object - Relational Mapping):
         1. Fundmentally, application writen java Perform logic.
-        2. The Java Language providing fecilities for iterative with loop,conditional logic with if statment and object oriented analysis through the use of class and interfaces.
+        2. The Java Language providing fecilities for iterative with loop, conditional logic with if statment and object oriented analysis through 
+            the use of class and interfaces.
         3. But Java application do not store date persistently.
         
         4. data persistence is typically delegated to relational database such as 
@@ -39,7 +40,7 @@ Hibernate Introduction Part 1:
             2       Query Language         HibernateQueryLanguage(HQL) and                 Strecure Query Language(SQL)
                                         Java Presistence Query Language(JPQL)   
             3       Licence                     LGPL 2.1 ans ASL 2.0                            Oracle Licence 
-            4       Packaging      standalone JAR file alog with dependent libraries              Part of JAVA SE 
+            4       Packaging      standalone JAR file along with dependent libraries              Part of JAVA SE 
             5       Caching             Build-in second-level caching                               No Caching 
             6       Competitors      Toplink, EclipseLink, OpenJPA and ActiveJDBC                   ODBC,JDO     
             7       Maintainer          JBoss by Red Hat                                              Oracle            
@@ -54,7 +55,7 @@ Hibernate Introduction Part 1:
         4. It can cut down a lot of complexity and thus defaucts as well from your application, which may otherwise find a way to exist.
         5. This is especially boon for developers with limited Knowlage of SQL.
 
-        6. Initialy started as an ORM Framework, Hibernate has  spun off into many projects, sucg as hibernate search, Hibernate valitation, Hibernate ORM(for No SQL database) ans so on.
+        6. Initialy started as an ORM Framework, Hibernate has  spun off into many projects, sucg as hibernate search, Hibernate valitation, Hibernate ORM(for No SQL database) and so on.
 
     7. Hibernate Architecure: - Refer to image
 
@@ -228,23 +229,13 @@ Hibernate CACHE Part 1:
         2. Second thing:
             you have configure hibernat.cfg.xml
             2. By default second level cache is disable so you enable it by using <>.
+            3. Add To Config File:
+                 <property name="hibernate.cache.use_second_level_cache">true</property>
+                    <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
         3. Third Thing:
             1. You have chage the entity by using Annotations:
                 @Cacheable
                 @Cache
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Notes
@@ -263,5 +254,12 @@ Notes
 WEBINER:
 Association Mapping:
     Association Mapping refer to the process of defining relationship between two or more entities(tables).
-    This Relationship represent the association between object in an object oriented model and their corresponting database table in the relational model.
+    This Relationship represent the association between object in an 
+        object oriented model and their corresponting database table 
+        in the relational model.
     Types of Association mapping:
+        1. one to one
+        2. one to many
+        3. many to one
+        4. many to many
+        
