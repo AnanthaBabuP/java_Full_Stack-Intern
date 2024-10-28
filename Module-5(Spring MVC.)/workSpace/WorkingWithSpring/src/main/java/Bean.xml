@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+        	<!-- bean definitions here -->
+			<!-- <bean id="bankObj" class="com.demo.spring.WorkingWithSpring.Bank">
+	   
+			</bean>
+			<bean id="constructorBasedBean" class="com.demo.spring.WorkingWithSpring.ConstructorBean.Book">
+				<constructor-arg name="bookid" value="1001"></constructor-arg>
+				<constructor-arg name="bookName" value="Spring Boot"></constructor-arg>
+				<constructor-arg name="author" value="Craig Wallss"></constructor-arg>
+				<constructor-arg name="price" value="123.45"></constructor-arg>
+			</bean>
+			
+			<bean id="setterBasedBean" class="com.demo.spring.WorkingWithSpring.SetterBean.Book">
+				<property name="bookid" value="1001"></property>
+				<property name="bookName" value="Spring Boot"></property>
+				<property name="author" value="Craig Wallss"></property>
+				<property name="price" value="123.45"></property>
+			</bean>
+			
+			<bean id="vachile" class="com.demo.spring.WorkingWithSpring.DI.Car"></bean>
+			
+			<bean id="mon" class="com.demo.spring.WorkingWithSpring.Moniter">
+				<property name="size" value="1234"></property>
+				<property name="resolution" value="1230"></property>
+			</bean>
+			
+			<bean id="com" class="com.demo.spring.WorkingWithSpring.Computer">
+				<property name="companyName" value="Name Of Computer"></property>
+				<property name="price" value="999999"></property>
+				<property name="monit" ref="mon"></property>
+			</bean> -->
+			<bean id="mon" class="com.demo.spring.WorkingWithSpring.Moniter">
+				<property name="size" value="1234"></property>
+				<property name="resolution" value="1230"></property>
+			</bean>
+			
+			<bean id="com" class="com.demo.spring.WorkingWithSpring.Computer">
+				<property name="companyName" value="Name Of Computer"></property>
+				<property name="price" value="999999"></property>
+				<constructor-arg name="monit" ref="mon"></constructor-arg>
+			</bean>
+			
+</beans>

@@ -1,0 +1,441 @@
+# Spring MVC
+Internship-Course:
+
+Notes:
+    Basic Used:
+        Spring - Version 4 (6.1.14)
+        Hibernate - version 5
+        POM = Project Object Model(pom.xml)
+    3 Way to handle Repentance Injection:
+        1. Xml File With Beans Tags
+        2. XML File With Annotation Tags
+        3. Class Configuration
+    2 Way to Crete Object Using Application Context
+        1. ClassPathXMLApplicationContext();
+        2. AnnotationConfigApplicationContext(); -> Use For Class Configuration.
+    Aspect - Tracking.
+
+    MVC:
+        Java-Framework
+        Which is used to build web application
+        It Follows the Model-View-Controller(MVC) design Pattern.
+        It implements all the basic feature of core spring framework like Inverstion Of Control(IOC), Dependency Injection(DI)
+        It is n Layer Architecture
+
+Spring Introduction Part 1: 
+    1. Spring tutorial:
+        1. The Spring Framework is a Open Source application framework that provide infrastructure suport for developing java application.
+        2. One of the most popular  Java Enterprise Edition(Java EE) frameworks, Spring helps developers create high performing applications Using Plain Old Java Object(POJO).
+        3. A framework is a large body of predefined code to which developer can add code to solve a problem in a specific domain.
+        4. There are many popular Java Frameworks Including 
+            Java Server Faces(JSF)
+            Maven,
+            Hibernate,
+            Structs,
+            and Spring
+
+        5. Roderick B.Joneson, an Australian computer Specialist officially release a spring frame work in 2004.
+        6. The Spring Framework is Hosted by SourceForge.
+
+        7. Latest Spring Version 5.3.22, Spring boot Version 2.7.1(Currently Updated)
+
+    2. Spring Framework Features:
+        1. Light Wight
+        2. Inversion Of Control(IOC) (Dependency Injection)
+        3. Aspect Oriented Programming(AOP)
+        4. Container
+        5. MVC Framework
+        6. Transaction Management
+        7. JDBC Exception Handling
+    
+    3. Spring Framework Architecture:
+        1. Data Access/Integration
+            1. JDBC(Java Data Base Connectivity)
+            2. ORM (Object-Relational Mapping)
+            3. OXM (Object-XML Mapping)
+            4. JMS (Java Mail Service)
+            5. Transactions
+        2. Web:
+            1. WebSocket
+            2. Servlet 
+            3. Web
+            4. Portlet
+        3. AOP
+        4 Aspects
+        5. Instrumentation
+        6. Core Container:
+            1. Beans
+            2. Core
+            3. Context
+            4. SpEL (SpringBoot Expression Language)
+        7. Test
+    
+    4. Modules Of Spring Framework:
+        Core Container:
+            1. Spring Core:
+                This is the core of the Spring Framework.
+                It provide Implementations for feature like IOC(Inversion Of Control) and Dependency Injection(DI) With a singleton Design Pattern.
+            2. Spring Bean: 
+                This Model provide an implementation for the Factory design pattern through Bean Factory.
+            3. Spring Context:
+                This Module is build on the solid base provided by the Core And Beans Modules and is a medium to access any Object defined and Configured.
+            4. Spring Expression Language (SpEL) :
+                This module is an extension of expression Language.
+                Supported by Java Server Page(JSP).
+                It Provide a powerful Expression Language for Quiring and Manipulation an Object graph, at runtime.
+    
+    5. Data Access/Integration:
+        1. JDBC:
+            This Module Provide JDBC abstraction layer which eliminate the need of repetitive and unnecessary expression Handle overhead.
+        2. ORM:
+            This Module provide consistence/portability to our code record less of data access technologies based on Object oriented programming Concept.
+        3. OXM:
+            OXM Stands Object XMl Mappers.
+            It is used to convert Object into XML Format and Vice Versa.
+            The Spring OXM Provide Uniform Api to Access Any of these OXM frameworks.
+        4. JMS(Java Messaging Service):
+            This Model contains Features of production and consuming Message among various Client.
+        5. Transaction: 
+             It is Used For Transaction Management for Class that implement Special interfaces and all your POJOs.
+             All the enterprise Level transaction implementation Concepts Can be Implemented  in Spring by Using this module.
+    
+    6. Spring Web:
+        1. Web :
+            This Model Using Servlet listeners and a web-oriented application Context, Provide basic web-oriented Integration features like multi-part file upload functionality and the initialize of the IoC Container.
+        2. Web-Servlet:
+            This Model Contain Model-View Controller(MVC) based Implementation for web application.
+            It provide all other feature of MVC, Including UI Tags and Data Valitations.
+        3. Web-Socket:
+            This Model Provide Support for WebSocket based and 
+            Two way Communication between Client and Server in the web application.
+        4. Web-Portlet:
+            This Module also Know   as the Spring-MVC-Portlet Modul.
+            It provide the support for Spring-based portlets and mirrors the functionality of a Web-Servlet Module.
+
+
+
+Spring Introduction Part 2;
+    1. base Maven project Creation:
+        File -> New -> Project -> Maven Project -> Next -> Filter : type(org.apache.maven -> Quick Start) -> Next -> 
+            Group Id : Base Package
+            ArtifactID : Project Name. -> Finish
+    2. ApplicationContext:
+        It is an Interface.
+        It is a Spring Container.
+        3. It is used to create Bean Factory.
+        4. It is Suitable for Aspect Oriented Programming(AOP).
+
+    3. How to initialize the Spring
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(<Bean.xml>);
+        className obj = ctx.getBean(className.class);
+        obj.<veriable or methods>
+
+Spring Bean Initialization:
+        Bean - Object
+            1. Constructor Based Initialization
+            2. Setter Based Initialization
+        
+        1. Constructor Based Initialization :
+            1. Must have Paramerized Construnctor
+            2. This used for <Construnctor-arg></constructor-arg> tag
+            3. Bean.xml File Use 
+                <Bean id="--" class="--">
+                    <Constructor-arg name='fieldName' value= 'defaultValue'></Constructor-arg>
+                    ...
+                </Bean>
+        2. Setter Based Initialization:
+            1. Must have default Construnctor
+            2. This used for <property></property> tag
+            3. Bean.xml File Use 
+                <Bean id="--" class="--">
+                    <property name='fieldName' value= 'defaultValue'></property>
+                    ...
+                </Bean>
+
+Dependency Injection Part 1:
+    1. Dependency Injection(DI):
+        One class Depending on another class.
+        Types:
+            1. Tightly Coupled.
+            2. Loosely Coupled.
+    2. Explanation:
+        one class depend on another class reference It is called Dependence Injection.
+        They Have 2 types(tirght and Loosly).
+        In The feature you can change the repentance Spring provide Loosely complied type using XML with Interface,
+
+
+Types of Dependency Injection:
+    1. Setter Based Dependency Injection
+    2. Constructor Based Dependency Injection
+
+    Same to Bean Initialisation But use 'ref' Attribute to Inject Dependency.
+    
+    Example:
+        <bean id="mon" class="com.demo.spring.WorkingWithSpring.Moniter">
+            <property name="size" value="1234"></property>
+            <property name="resolution" value="1230"></property>
+        </bean>
+        
+        <bean id="com" class="com.demo.spring.WorkingWithSpring.Computer">
+            <property name="companyName" value="Name Of Computer"></property>
+            <property name="price" value="999999"></property>
+            <constructor-arg name="monit" ref="mon"></constructor-arg>
+        </bean>
+    Explain:
+        Bean id 'mon' property are assign to efference for 'com' object.
+
+        
+Spring Annotation Dependency:
+    1. Annotation Based Dependency Injection:
+        1. @Component
+        2. @Autowire
+        3. @Value
+    
+        1. @Component:
+            It is used to create Object in runtime for Class. 
+            It is alternative Obtion for bean concept.
+               <bean id="com" class="com.demo.spring.WorkingWithSpring.Computer"></bean>
+                  |
+                  |
+                @Component
+
+        2. @Value:
+            1. It Set to the value for Field in Run time.
+            2. Must value Declare in String Format
+            3. example:
+                @Value("1200")
+                private int price;   
+                    (Alternative For)
+                <property> And <Constructor-arg>
+            4. Type to Declare @Valur Annotation:
+                1. above the property   
+                    ex:
+                        @Value("Dell")
+                        private String com_name;
+                2. Above the Setter method
+                        @Value("Dell")
+                        public void setCom_name(String com_name)
+                3. Along With Constructor:(Parameterized Constructor)
+                1. You can use to Autowire annotation , because constructor is called to create object .
+                    ex:
+                    @Autowire
+                    public ClassName(@Value("value1") datatype var1,@Value("value2") datatype var2,@Value("value3") datatype var3 )
+
+        
+        3. @Autowire:
+            1. You can declare in parameterized Constructor you must use @Autowire Annotation
+            2. It is used for alternative Option for 'ref' Attribute.
+    2. Changes For xml   
+        browser -> Annotation configuration for spring -> Click First Link -> Open -> Paste the code to XML file.
+        browser : https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html
+        25-10-2024 Source File:
+            <?xml version="1.0" encoding="UTF-8"?>
+            <beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:context="http://www.springframework.org/schema/context"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    https://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context
+                    https://www.springframework.org/schema/context/spring-context.xsd">
+
+                <context:annotation-config/>
+
+            </beans>
+
+    3. Add to <context:Component-scan base-package ="">
+        Component scan is IOC
+
+ Dependency Injection Part 2:
+    1. @Configure:
+        It is Configure to Class File
+    2. @ComponentScans:
+        Scan All the Component Class And Create Object to all relevant Classes.
+        Use to base Packages Attribute for setting package root files configuration.
+    3. @Component
+        It Represent to the Factory Class.
+
+
+Spring Inversion Of Control(IOC):
+    1. It is a process of Converting external Entity.
+    2. Spring framework is an implementation of IOC Container.
+    3. It is add new dimension to how you write your Code.
+    4. Object are Injected Run time, Usually during start-up Operation.
+    5. This allow the container to maintain the Objects and Handle Dependencies to other objects within the runtime.
+    6.  And Object that accept these dependencies usually does this  
+        1. through Constrains of Object itself or 
+        2. through  Setter Injection.
+
+
+    1. Inversion Of Control Container is responsible to instantiate, Configure and as sample the Object.
+    2. Inversion Of Control Container gets information from the XML file and Work Accordingly.
+
+    Interface:
+        1. BeanFactory
+        2. ApplicationContext
+    These Interface Act as the Inversion Of Control(IOC) Container.
+
+
+Spring AOP Part 1:
+    Spring AOP:
+        We Have already seen how to Dependency Injection Work, also we will look into the core concept of Aspect-Oriented Programming(AOP)
+        How we can implements it using Spring Framework.
+    2. Spring AOP Overview:
+        Most Of the enterprise application have some common crosscutting concerns that are applicable to different type of object and Modules.
+        Some Of the common crosscutting concerns are 
+            1. Login
+            2. Transaction Management
+            3. data Validations
+            4. Exception Handling.
+
+        In Object Oriented Programming ,modularity of application is achieved by classes Whereas in Aspect Oriented Programming application modularity is achieve by Aspect.
+
+        A Cross-cutting concern is the one of that affects the whole application and should be centralized under the same block in the code. 
+
+    3. What are the crosscutting Concerns:
+        Generic functionality is needed in many place in your application.
+        Examples:
+            1. Logging and Tracking
+            2. Transaction Management
+            3. Security
+            4. Caching
+            5. Error Handling
+            6. Performance Monitoring
+            7. Custom Business Rules.
+    
+    4. Steps to Create AOP Example:
+         1. Add 3 Dependency :
+                1. aspectjweaver
+                2. aspectjrt
+                3. aspectjtool
+        2. Aspect & Pointcut Expression:
+            Write aspect class annotation with @Aspect annotation and write point-cut expression.
+        3. Methods(Join Points):
+            Which methods o  which you want to execute advices and those match with point-cut expression.
+        
+       4. Run the Application:
+            Run the application and watch the console.
+
+    5. Type Of advice Annotation    
+        1. @Before :- Run before the Method Execution
+        2. @After :- Run After the Method Execution
+        3. @AfterReturning :- Run After returns a result
+        4. @AfterThrowing :- Run After the method throws an exception.
+        5. @AroundAdvice :- Run Around the method Execution, Combine all three advice before.
+
+Spring AOP Part 2:
+    Why AOP?
+        1. Join point
+        2. advice ; Already Learn
+        3. Pointcut
+        4. TargetObject
+        5. Aspect
+        6. Proxy
+        7. Weaving
+    
+    2. Aspect:
+        An Aspect is a class that implements enterprise application concept concern that across multi classes, Such as Transaction Management.
+        Aspect can be a normal class configured through Spring XML Configuration OR We can use Spring Aspectj integrity to define a class as aspect using:
+            @Aspect Annotation
+
+    2. Join Point:
+        A Join Point is a specific point in the application such as Methods, exception Handling, or chache Object Variable Values, etc.
+        In Spring AOP a join point is always Execution of a method.
+        Joinpoint Is a Interface: default Methods.
+            getSignification()
+            getArgs()
+    3. Advice:
+        Advice are action taken for a particular join point.
+        In terms of Programming, They are Methods that get executed when a certain join point with matching pointcut is reached in the Application.
+        You can think of Advices As Structs2 or Servlet Filter.
+
+    4. Pointcut:
+        Point cut is a EXPRESSION that are matched with join points to determine whether advice needs to a execution or not.
+        pointcut uses different kinds of expressions that are matched with join point and spring framework used the AspectJ Pointcut Expression Language.
+        Using to handle @PointCut("within(<rout of the class path >)")
+
+    5. Target Object:
+        They are the Object on Which advices are applied.
+        Spring AOP is Implemented using Runtime PROXIES so this Object is always a proxied Object.
+        What is mean that a subclass is created at a runtime where the target method is overridden and advice are included based in their configuration .
+    6. AOP Proxy:
+        Spring AOP Implementation used JDK dynamic proxy to create the proxy classes with target Classes and Advice invocations, these are called AOP Proxy Classes.
+        We can also used CGLIB proxy by adding it as the dependency in the spring AOP project.
+    7. Weaving:
+        It is the process of Linking Aspect With Other Objects to create the Advised proxy Object.
+        This can be done at compile time or at run time.
+        Spring AOP Performs weaving at the runtime.  
+
+Spring Components:
+    1. Dispatcher Servlet
+    2. Handle-Mapping
+    3. Controller
+    4. View Resolver
+
+
+    1. Spring MVC Components:
+        1. Dispatcher Servlet:
+            1. It is the Front-Controller.
+            2. It is a implementation of Servlet by Spring Framework.
+            3. It is Configure in web.xml.
+            4. It will be Managed by J2EE Container
+            5. It is the Only one Servlet which will be COnfigured in Spring MVC.
+
+        Front-Controller:
+            It is a design Pattern
+            Only Servlet can implement front-Controller Design Pattern.
+            Front Controller have Only one Servlet for the web application to process the request and send the response.
+            Dispatcher-Servlet is the front-Controller.
+        
+        2. Handler-Mapping:
+            It is an Interface.
+            2. It is the Map which has Key and Value Pair.
+            3. It is to map URL with the Controller.
+            4. It is used to scan @RequestMapping Annotation.
+            5. It takes the URL and return the controller name to Dispatcher Servlet.
+        
+        3. Controller:
+            Controller is the Component of Dispatcher Servlet.
+            Controller is used to design the process request and Controll the Navigation.
+            Controller takes the request and retern ModelAndView to Dispatcher Servelt. 
+        4. View Resolver:
+            1. View Resolver is a helper of Dispacher Servlet.
+            2. It is used to find resource pages.
+            It takes the page name return to Dispacher Servlet.
+
+
+Spring MVC:
+    1. Advantages Of Spring MVC Framework:(Refer to Image)
+        1. Sperate Role
+        2. Light-weight
+        3. Powerful Configuration
+        4. Repid Development
+        5. Reusable Bussiness Code
+            Instance of creating new Object ,It allow as to use the existing bussiness Object.
+        6. Easy to Testing:
+            In Spring Generally create JavaBean classes that enable you to inject test data using Setter Methods.
+        7. Flexible Mapping:
+            It provide annotation that easily redirect the page.
+
+    2. Definision :
+        View:
+        ------
+            HTML,
+            CSS,
+            JavaScript,
+            JSP,
+            Boostrap,
+            Thymeleaf
+        
+        Controller -> Request Processing Logic(RPL):
+        ------------
+            Servlet,
+            Structs,
+            JSF(Java Server Face)
+        
+        Model:
+        -------
+            Class-> Bussines Logic, Valitation Logic
+            DAO(data Access Object)
+            GRUD(Greate Read Update Delete)
+            Object-Relational Mapping(ORM)
+            LDAP(Light-Wight Development Access Protocol)
