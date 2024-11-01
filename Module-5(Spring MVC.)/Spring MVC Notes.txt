@@ -61,7 +61,7 @@ Spring Introduction Part 1:
             3. Web
             4. Portlet
         3. AOP
-        4 Aspects
+        4  Aspects
         5. Instrumentation
         6. Core Container:
             1. Beans
@@ -334,11 +334,11 @@ Spring AOP Part 2:
     
     2. Aspect:
         An Aspect is a class that implements enterprise application concept concern that across multi classes, Such as Transaction Management.
-        Aspect can be a normal class configured through Spring XML Configuration OR We can use Spring Aspectj integrity to define a class as aspect using:
+        Aspect can be a normal class configured through Spring XML Configuration OR We can use Spring AspectJ integrity to define a class as aspect using:
             @Aspect Annotation
 
     2. Join Point:
-        A Join Point is a specific point in the application such as Methods, exception Handling, or chache Object Variable Values, etc.
+        A Join Point is a specific point in the application such as Methods, exception Handling, or cheche Object Variable Values, etc.
         In Spring AOP a join point is always Execution of a method.
         Joinpoint Is a Interface: default Methods.
             getSignification()
@@ -378,7 +378,7 @@ Spring Components:
             2. It is a implementation of Servlet by Spring Framework.
             3. It is Configure in web.xml.
             4. It will be Managed by J2EE Container
-            5. It is the Only one Servlet which will be COnfigured in Spring MVC.
+            5. It is the Only one Servlet which will be Configured in Spring MVC.
 
         Front-Controller:
             It is a design Pattern
@@ -395,12 +395,12 @@ Spring Components:
         
         3. Controller:
             Controller is the Component of Dispatcher Servlet.
-            Controller is used to design the process request and Controll the Navigation.
-            Controller takes the request and retern ModelAndView to Dispatcher Servelt. 
+            Controller is used to design the process request and Controls the Navigation.
+            Controller takes the request and return ModelAndView to Dispatcher Servlet. 
         4. View Resolver:
-            1. View Resolver is a helper of Dispacher Servlet.
+            1. View Resolver is a helper of Dispatcher Servlet.
             2. It is used to find resource pages.
-            It takes the page name return to Dispacher Servlet.
+            It takes the page name return to Dispatcher Servlet.
 
 
 Spring MVC:
@@ -408,23 +408,23 @@ Spring MVC:
         1. Sperate Role
         2. Light-weight
         3. Powerful Configuration
-        4. Repid Development
-        5. Reusable Bussiness Code
-            Instance of creating new Object ,It allow as to use the existing bussiness Object.
+        4. Rapid Development
+        5. Reusable Business Code
+            Instance of creating new Object ,It allow as to use the existing business Object.
         6. Easy to Testing:
             In Spring Generally create JavaBean classes that enable you to inject test data using Setter Methods.
         7. Flexible Mapping:
             It provide annotation that easily redirect the page.
 
-    2. Definision :
+    2. Definition :
         View:
         ------
             HTML,
             CSS,
             JavaScript,
             JSP,
-            Boostrap,
-            Thymeleaf
+            Bootstrap,
+            Thyme leaf
         
         Controller -> Request Processing Logic(RPL):
         ------------
@@ -434,8 +434,31 @@ Spring MVC:
         
         Model:
         -------
-            Class-> Bussines Logic, Valitation Logic
+            Class-> Business Logic, Validation Logic
             DAO(data Access Object)
-            GRUD(Greate Read Update Delete)
+            GRUD(Create Read Update Delete)
             Object-Relational Mapping(ORM)
             LDAP(Light-Wight Development Access Protocol)
+
+
+Spring MVC Demo Application:
+   
+    Normal Code Convert to Spring Add Dependencies are 
+        Spring Core
+        Spring web
+        Spring web-MVC
+
+Spring MVC CRUD Part 1:
+    Required Dependencies:
+        1. Spring Core     v-4.3.30
+        2. Spring web      v-4.3.30
+        3. spring web-mvc  v-4.3.30
+        4. spring ORM      v-4.3.30
+        5. Hibernate core  v-5.4.33
+        6. MySQL Connector v-8.0.28
+
+Packages:
+    Controller(Dispatcher Servlet)
+    model(POJO Classes)
+    service(Business Logic)
+    dao(persistence Logic)
