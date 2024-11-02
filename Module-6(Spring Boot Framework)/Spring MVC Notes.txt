@@ -1,0 +1,155 @@
+# Spring Boot Framework
+Internship-Course:
+
+Notes:
+    REST - Representational State Transfer
+    STS - Spring Tools Suite
+    API - Application Programming Interface:
+    --------
+         Collection of predefimed Classes and interfaces.
+         Example:
+            JDBC
+            Servlet
+    Rest mainly used for developing micro services.
+
+    MVC Application:
+    -----------------
+        web.xml - deployment descriptor
+Spring Boot Introduction:
+    1. What is SpringBoot?     
+        Spring boot is a adverce version of spring Framework.
+        It provide an easier and faster way to set up, configuartion, and run both simple and web-based application.
+        It is a Spring Module provide the RAD(Rapid Application Development) feauture ti the spring framework.
+        It is used to create stand-alone spring-based application that you can just run because it's need minimul configuration.
+        You Can start with several configuration instand of a complite spring configuration.
+        SpringBoot is a great platform for java developers to create ready-to run ,self-contains, production-ready spring application.
+        
+        Spring Boot is a java-based framework that is used for developing Micro services.
+        Pivotal is the company that is behind it.
+        Spring Boot is some taht maked it siple to condtruct standalone, production-ready spring apps.
+        Spring boot include extensive infrastructure support for constructing micro-services, allowing you can construct enterprice-ready application that can also be "simple run".
+
+        Our SpringBoot Tutorial incluse all topices of Spring Boot such as 
+            feauture
+            project, 
+                mavan project
+            Wixzard
+                Spring initializr,
+                CLI,
+                applications,
+                annotations,
+                dependancy Management,
+                propertys,
+                starters,
+                Actuator,
+                JPA,
+                JDBC,
+                etc...
+
+        
+        Spring Framework (+) Empaded Http Servers(Tomcat, jetty) (-) XML<bean> Configuration or @Configuratin (=) Spring Boot
+
+    2. Differance Between Spring framework(1) VS Spring Boot(2)?
+        Refer To Image
+        1. Application  
+            1. It is used to developing enterprice application
+            2. It is used to devlop REST API Application
+        2. Based On
+            1. Dependancy Injection
+            2. AutoConfiguration
+        3. in-memmory database:
+            1. No in-memmory database
+            2. inbuild in-memory database such as H2
+        4. program:
+            1. It is loosly compled 
+            2. It ir stand alone
+        5. dependancy descriptor:
+            1. It is require dependancy descriptor
+            2. No required in dependency descriptor
+        6. Server:
+            1. we need to set server explicity
+            2. Inbuild server such as tomcate and jetty
+
+    3. How to download Spring Boot:
+        spring boot download -> Spring | Tools -> Spring Tools 4 for Eclipse 
+        -> <Downlaos your system required Application> -> create new folder in driver c or d any drive 
+        -> Paste the zip file and extract -> Open extracted folder -> Open folder on click SpringToolSuite Applicatio  And run it.
+
+    4. Create and Run Project:
+        file -> new -> Spring  startedproject -> set file name -> set maven project -> next -> (Add needed dependencys) After Click next -> Finish
+
+        OPen file com.example.demo -> @SpringBootApplication Annotaion class -> right click -> Run as -> Spring Boot App -> Shoe the terminal to runing Project.
+
+
+Spring Boot Dependency Injection:
+    Bean Scope: 
+        @Component
+        @Scope(value = "Bean Scope Name")
+    -----------
+
+        1. singleton(default Scope) - only one referance
+        2. prototype - 
+        3. request
+        4. session
+        5. global session
+
+Spring Boot Web Application:
+    1. Differnace Between spring boot VS Spring MVC:
+        Refer to image : Screenshot 2024-11-02 193400
+
+    2. How to create Spring boot web application:
+        1. File -> New -> Project -> Spring Started Project -> 
+            Name(SB Web Application) -> type (Maven) -> java version(Any) 
+            -> Next -> (SpringBoot 2.7) -> Spring Web(Select) -> Next -> Finish
+
+            If JSP Render using add dependency in tomcat-jasper (Version based on your peroject tomcate server) to bom.xml
+
+
+Spring Boot Web App Possibilities:
+    1. Application properties:  
+        spring.mvc.view.prefix = /Add Folder Name/
+        spring.mvc.view.suffix = .jsp (or) .html
+        server.port = <Customize Port Number>
+
+Spring Initializr:
+    1. Open Browser -> Type(Spring Initializr) -> Click On First Link  ->
+        project - mavan
+        language - java
+        spring boot - Select lowest version
+        group - default
+        Artifact -<Customize name>
+        .
+        .
+        .
+        Packing = jasper
+        java - select any version
+
+        Right Site -> Add Dependancy
+            1. Spring Configuration processor
+            2. Spring web
+
+        Click Generate.
+    
+    2. Cut the file and create new folder and paste zip file and extract the file inside the folder 
+    -> Open Eclipse -> Right Import -> Import -> Existing Maven Project -> Next
+    -> Route Dorectory - Open Extract Folder Select -> then Finish
+
+    3. Create Controller Class And Create JSP file in (main/webapp) And Must add depentance for Rendering process in (tomcat-jasper-(Based on your project tomcate version)) And Run the application.
+
+Spring Boot H2 Database:
+    What is in-memory database?
+        Inmemory database relies on system memory as oppose to disk spacr for storage of data.
+        Because Acess is faster then disk accedd.
+        *We use the in-memory database when we do not need to persist the data.
+        in-memory database in an empaded database.
+        The Widely used in-memory databases are H2, HSQLDB(HyperSQL Database) And Apache Derby.
+        It Creates the Configurarion automatically.
+    
+    Prisistence VS In-Memory Database:
+        The Prisistent database prsists the data in physical memory.
+        The data will be able even if the database server is 'bounced'.
+        Some popular persistence database are,
+            Oracle
+            MYSQL
+            Postgres
+            etc...
