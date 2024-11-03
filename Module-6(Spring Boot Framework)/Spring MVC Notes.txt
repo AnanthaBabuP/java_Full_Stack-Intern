@@ -15,6 +15,8 @@ Notes:
     MVC Application:
     -----------------
         web.xml - deployment descriptor
+
+    Persist data - permenent data.
 Spring Boot Introduction:
     1. What is SpringBoot?     
         Spring boot is a adverce version of spring Framework.
@@ -137,7 +139,7 @@ Spring Initializr:
     3. Create Controller Class And Create JSP file in (main/webapp) And Must add depentance for Rendering process in (tomcat-jasper-(Based on your project tomcate version)) And Run the application.
 
 Spring Boot H2 Database:
-    What is in-memory database?
+    1. What is in-memory database?
         Inmemory database relies on system memory as oppose to disk spacr for storage of data.
         Because Acess is faster then disk accedd.
         *We use the in-memory database when we do not need to persist the data.
@@ -145,7 +147,7 @@ Spring Boot H2 Database:
         The Widely used in-memory databases are H2, HSQLDB(HyperSQL Database) And Apache Derby.
         It Creates the Configurarion automatically.
     
-    Prisistence VS In-Memory Database:
+    2. Prisistence VS In-Memory Database:
         The Prisistent database prsists the data in physical memory.
         The data will be able even if the database server is 'bounced'.
         Some popular persistence database are,
@@ -153,3 +155,43 @@ Spring Boot H2 Database:
             MYSQL
             Postgres
             etc...
+
+    3. What is H2Database:
+        H2 is an 'Empaded, Open source, and in-memory database'.
+        It is a 'Relational Database Manaement System(RDBMs) writen in java.
+
+        It is client/server application.
+        It is generally usrd in 'unit testiong'.
+        It stores data in memory not persist the database on disk.
+    
+    4. Advantages:
+        Zero Configuration
+        it is easy to use
+        It is lightweight and fast.
+        It provide simple Configuration to switch between a real and in-memory database.
+        It supports Standard SQL and JDBC API.
+        It provide a web console to maintain in the database. 
+    
+    5. Setup Property for the H2 Database in the apllication:
+        #H2 database property:
+        spring.datasource.url=jdbc:h2:mem:testh2db
+        spring.datasource.driverClassName=org.h2.Driver
+        spring.datasource.username= sp
+        spring.datasource.password=password
+        spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+        #wnabling the H2 console
+        spring.h2.console.enabled=true
+
+    6. Needed Dependance for creating Spring Started Project:
+           JDBC API
+           Spring Data JPA
+           Spring data JDBC
+           H2 Database
+           Spring Web
+
+Spring Boot H2 Database CRUD Part 1
+
+
+
+if Error H2 database Ather 500 error "check jstl Spelling"
