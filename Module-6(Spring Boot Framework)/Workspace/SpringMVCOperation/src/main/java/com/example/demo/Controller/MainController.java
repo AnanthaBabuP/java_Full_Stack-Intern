@@ -1,22 +1,20 @@
 package com.example.demo.Controller;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.ProductDAO;
-import com.example.demo.dao.ProductService;
 import com.example.demo.model.Product;
 
-@Controller
+@RestController
 public class MainController {
 
 	private ProductDAO dao;
@@ -31,22 +29,60 @@ public class MainController {
 		return "Home";
 	}
 
-	@RequestMapping("/saveProduct")
-	public String saveProcess(Product p) {
+	/**
+	 * SAVE PROCCESS
+	 * @param p
+	 * @return
+	 */
+	@PostMapping(path="/saveProduct", consumes = {"application/json"})
+	public Product saveProcess(@RequestBody Product p) {
+		return dao.save(p);
+	}
+	
+//	@PostMapping("/saveProductFormData")
+//	public String saveProcessUsingFormData(Product p) {
+//		dao.save(p);
+//		return "Home";
+//	}
+//	
+//	@PostMapping(path="/saveProductRawData", consumes = {"application/xml"})
+//	public String saveProcessUsingRawData(@RequestBody Product p) {
+//		dao.save(p);
+//		return "Home";
+//	}
+	
+	@PutMapping(path="/updateProduct", consumes = {"application/json"})
+	public Product updateProtect(@RequestBody Product p) {
 		dao.save(p);
-		return "Home";
+		System.out.println("Updated..");
+		return p;
+	}
+	
+	@DeleteMapping(path="/deleteProduct/{pid}", consumes = {"application/json"})
+	public String deleteProduct(@PathVariable("pid") int id) {
+//		Product p = dao.findById(id).get();
+//		
+//		dao.delete(p);
+//		System.out.println("Deleted..");
+		// OR
+		
+		
+		dao.deleteById(id);
+		System.out.println("Deleted..");
+		return "Deleted...";
 	}
 
-	@RequestMapping("/viewAllProducts")
+
+	@GetMapping(path="/viewAllProducts",produces = {"application/xml"})
 	@ResponseBody
 	public Iterable<Product> viewAllProducts() {
 		return dao.findAll();
 	}
 
-	@RequestMapping("/{pid}")
+	@GetMapping("/product/{pid}")
 	@ResponseBody
-	public Optional<Product> viewOneProduct(@PathVariable("pid") int pid) {
-		return dao.findById(pid);
+	public Product viewOneProduct(@PathVariable("pid") int pid) {
+		return dao.findById(pid).orElse(null);
 	}
 	@RequestMapping("/editProduct/{productId}")
 	public String deleteProcess(@PathVariable("productId") int pid, Model m) {
