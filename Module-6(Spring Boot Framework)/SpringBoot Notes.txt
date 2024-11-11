@@ -430,6 +430,40 @@ REST Data Set:
 
     Then Run the project and Use to check using Postman API
 
+Thymeleaf Views
+    Document refrer to browser.
+    
+    Using Front End Technology:
+        JSP
+        HTML(Mostly referable)
+    
+    Configuartion HTML file in 
+        src/main/resourse/templates
+    Configuration For JQuery, CSS
+        src/main/resource/static/CSS
+    
+    Thymeleaf Expresion.(Refer to Browser)
+        ${...} : Variable expressions.
+        *{...} : Selection expressions.
+        #{...} : Message (i18n) expressions.
+        @{...} : Link (URL) expressions.
+        ~{...} : Fragment expressions.
+
+    How to creare Project:
+        File -> New _> Spring Started Project -> Add Dependencies 
+            Spring Boot dev Tools
+            Spring data JPA
+            My SQL Driver
+            Thymeleaf(Template Engine)
+            Spring Web 
+
+        -> Finish
+
+        -> then create
+
+        HTML -> 
+            Add header 
+            <html lang="en" xmlns:th:"http://www.thymeleaf.org">
 
 
 

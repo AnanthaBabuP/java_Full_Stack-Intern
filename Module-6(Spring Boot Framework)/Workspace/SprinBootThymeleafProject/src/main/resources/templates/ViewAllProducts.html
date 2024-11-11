@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Products</title>
+<title>View 2</title>
+    <link rel="stylesheet" th:href="@{/css/boostrap.min.css}">
+    <!-- Awesome Icon -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap-icons.min.css}">
+    
+	 <!-- bootstrap Icon -->   
+	<link rel="stylesheet" href="@{/css/font-awesome.min.css}">    
+
+</head>
+<body>
+	<div class="container mt-5">
+        <h1 class="text-center mb-4">Register Data</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr class="bg-info text-light">
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Quantity</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr th:each="product:${products}">
+                        <td th:text="${product.id}"></td>
+                        <td th:text="${product.pname}"></td>
+                        <td th:text="${product.quantity}"></td>
+                        <td th:text="${product.price}" class="badge bg-info text-light"></td>
+                        <td>
+                             <a th:href="@{/editProduct/{id}(id=${product.id})}" class="btn btn-success btn-sm">
+							        <i class="fas fa-edit"></i> Edit
+							    </a>
+						</td>
+                        <td>
+                            <a th:href="@{/deleteProduct/{id}(id =${product.id})}" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                    </tr>    
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

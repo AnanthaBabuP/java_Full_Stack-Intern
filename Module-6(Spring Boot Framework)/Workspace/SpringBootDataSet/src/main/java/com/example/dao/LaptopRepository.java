@@ -1,11 +1,11 @@
 package com.example.dao;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 import com.example.model.Laptop;
 
-@RepositoryRestResource(collectionResourceRel = "laptop", path = "laptops")
+@Repository
 public interface LaptopRepository extends CrudRepository<Laptop, Integer> {
 
 }

@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "86280607-8088-4521-83d3-2d5f27ea0642",
+		"name": "CodingChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33922113"
+	},
+	"item": [
+		{
+			"name": "RegisterBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"bookName\": \"Data Science from Scratch\",\r\n        \"authorName\": \"Joel Grus\",\r\n        \"bookPrice\": 49.99,\r\n        \"bookCategory\": \"Data Science\"\r\n    },\r\n    {\r\n        \"bookName\": \"Data Science from Scratch\",\r\n        \"authorName\": \"Joel Grus\",\r\n        \"bookPrice\": 49.99,\r\n        \"bookCategory\": \"Data Science\"\r\n    },\r\n    {\r\n        \"bookName\": \"Effective Java\",\r\n        \"authorName\": \"Joshua Bloch\",\r\n        \"bookPrice\": 45.00,\r\n        \"bookCategory\": \"Programming\"\r\n    },\r\n    {\r\n        \"bookName\": \"Architecting the Cloud\",\r\n        \"authorName\": \"Michael J. Kavis\",\r\n        \"bookPrice\": 29.99,\r\n        \"bookCategory\": \"Cloud Computing\"\r\n    },\r\n    {\r\n        \"bookName\": \"Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow\",\r\n        \"authorName\": \"Aurélien Géron\",\r\n        \"bookPrice\": 59.99,\r\n        \"bookCategory\": \"Machine Learning\"\r\n    },\r\n    {\r\n        \"bookName\": \"The Cybersecurity Playbook\",\r\n        \"authorName\": \"Allison Cerra\",\r\n        \"bookPrice\": 39.99,\r\n        \"bookCategory\": \"Cybersecurity\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"bookName\": \"Data Science\",\r\n    \"authorName\": \"Amit Kumar Tyagi\",\r\n    \"bookPrice\": 12212.25,\r\n    \"bookCategory\": \"Data Science\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBookById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
