@@ -365,7 +365,7 @@ Spring AOP Part 2:
         This can be done at compile time or at run time.
         Spring AOP Performs weaving at the runtime.  
 
-Spring Components:
+Spring MVC Components:
     1. Dispatcher Servlet
     2. Handle-Mapping
     3. Controller
@@ -387,7 +387,7 @@ Spring Components:
             Dispatcher-Servlet is the front-Controller.
         
         2. Handler-Mapping:
-            It is an Interface.
+            1. It is an Interface.
             2. It is the Map which has Key and Value Pair.
             3. It is to map URL with the Controller.
             4. It is used to scan @RequestMapping Annotation.

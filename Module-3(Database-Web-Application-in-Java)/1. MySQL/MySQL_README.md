@@ -1,6 +1,3 @@
-# Database-Web-Application-in-Java
-Internship-Course
-
 MySQL INDEX CONTENT:
 1. MySQL INTRODUCTION
     1. Data:

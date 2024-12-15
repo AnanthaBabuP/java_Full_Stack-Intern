@@ -92,8 +92,8 @@ Hibernate Introduction Part 2:
         4. It activate Hibernate framework.
         5. Configuration confic = new Configuration();
         6. It read Both cfg file and mapping files.
-        7. cfg.configure();
-        8. It check wherether the config file is syntacically correct or not.
+        7. cfg.configure("Configurationan Path");
+        8. It check whether the config file is syntactically correct or not.
         9. If the config file is not valid then it will throw an exception.
         10. If it is valid then create meta-data in memory and return the meta-data to object to represent the config file.
     
@@ -129,8 +129,8 @@ Hibernate Introduction Part 2:
                 Disconnect the session fro n.
 
     5. Transaction:
-        1. Transaction Object is used wherever we perform any operation and based upon that operation there is some chage in database.
-        2. Transaction object is used to give the instruction to the database to make chages that happen because of operation as a Permanent by using commit() method.
+        1. Transaction Object is used wherever we perform any operation and based upon that operation there is some change in database.
+        2. Transaction object is used to give the instruction to the database to make changes that happen because of operation as a Permanent by using commit() method.
         3. Transaction tx = session.beginTransacrion();
         4. tx.commit();
 
@@ -154,10 +154,10 @@ Hibernate CRUD Part 1:
     1. Create Hibernate project using Eclipse IDE:
         1. Create Java project.
         2. Add jar file for Hibernate.
-        3. Create presetent class.
-        4. Create Mapping file for presetent Class.
+        3. Create president class.
+        4. Create Mapping file for president Class.
         5. Create the configuration file.
-        6. Create the Class that retrive or stored the persistent Object.
+        6. Create the Class that retrieve or stored the persistent Object.
         7. Run the Application.
 
     1. Create Java Project;
@@ -166,17 +166,17 @@ Hibernate CRUD Part 1:
 Hibernate HQL Part 1:
     Hibernate Query Language:-
         Hibernate provide in query Language is called as Hibernate Query Language(HQL).
-        HQl is an object-orientat query language, similare ti the native SQL Language, and it work with persist object.
+        HQL is an object-orientate query language, similar to the native SQL Language, and it work with persist object.
 
     2. Advantage:
         Database Independent-HQL is a Database Independent Query language.
-        That means if we write programs using HQL Comments, then the program can be executed in akk relational databases without any modification.
+        That means if we write programs using HQL Comments, then the program can be executed in ask relational databases without any modification.
 
 Hibernate Annotations
-    Youtupe Referance:
+    YouTube Reference:
         Tag based Information.
     
-    Common 6 Anotations are:
+    Common 6 Annotations are:
         1. Entity
         2. Table
         3. Column
@@ -184,11 +184,11 @@ Hibernate Annotations
         5. GenericGenerator
         6. GenertedValue
     1. @Entity:
-        It Consider to all veriable are tale columns
+        It Consider to all variable are tale columns
     2.@Table:
-        This anotation is used to create and indentyfy the table in database.
+        This annotation is used to create and identify the table in database.
     3.@Id:-
-        This anotation is consiter to primary key column in the table.
+        This annotation is consider to primary key column in the table.
     4. @Column(name = "columnName")
         It declare to store a column for table
     5. @GenericGenerator(name="ref name" strategy="increment"):-
@@ -198,7 +198,7 @@ Hibernate Annotations
 
 Hibernate Relationship Part 1:
     1. Hibernate Relationship:-
-        1. Using Hibernate, if we want to put relationship between two entities[Object of two pojo].
+        1. Using Hibernate, if we want to put relationship between two entities[Object of two POJO].
         2. Then the database tables ,they are mist exist forgin key relationship.
         3. we call it as Referential integrity.
     
@@ -210,11 +210,11 @@ Hibernate Relationship Part 1:
     
 Hibernate CACHE Part 1:
     1. Hibernate Caching/Cache:
-        1. It is a mechanism to enhance the performence of the System.
+        1. It is a mechanism to enhance the performance of the System.
         2. It is buffer memory that lies between the application and the database.
-        3. Cach memory store recentlyused Data item in order to reduce the number of database hits as much as posible.
+        3. Cache memory store recently used Data item in order to reduce the number of database hits as much as possible.
 
-    2. In order to rovide second level cache it will provide the Third party libraries.
+    2. In order to provide second level cache it will provide the Third party libraries.
         1. ehcache
         2. OS cache
         3. Swarm Cache
@@ -222,9 +222,9 @@ Hibernate CACHE Part 1:
     3. We will used on eh cache:
         1. First thing: 
             In Order to get ehcache you have download the library called ehcache.jar
-            2. Also downloaf jar file called hibernate-ehcache.jar file
+            2. Also download jar file called hibernate-ehcache.jar file
 
-            3. Feauture:
+            3. Feature:
                 Hibernat-ehcache.jar provide integrity of eh and hibernate.
         2. Second thing:
             you have configure hibernat.cfg.xml
@@ -233,7 +233,7 @@ Hibernate CACHE Part 1:
                  <property name="hibernate.cache.use_second_level_cache">true</property>
                     <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
         3. Third Thing:
-            1. You have chage the entity by using Annotations:
+            1. You have change the entity by using Annotations:
                 @Cacheable
                 @Cache
 

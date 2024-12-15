@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 public class CollectionDemo {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList a1 = new ArrayList();  // <E> -> Generic

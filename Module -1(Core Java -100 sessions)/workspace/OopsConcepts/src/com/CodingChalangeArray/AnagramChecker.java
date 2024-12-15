@@ -1,4 +1,3 @@
-package com.CodingChalangeArray;
 
 import java.util.Scanner;
 

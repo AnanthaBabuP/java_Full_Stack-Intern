@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID Tracker Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>COVID Tracker</h1>
+    <canvas id="covidChart" width="400" height="200"></canvas>
+
+    <script>
+        // Inject JSON from Spring Boot
+        const locationStates = JSON.parse('[[${locationStatesJson}]]') || [];
+
+        // Debugging
+        console.log('Location States:', locationStates);
+
+        if (locationStates.length === 0) {
+            console.warn("No data available to render the chart.");
+        } else {
+            // Prepare data for the chart
+            const labels = locationStates.map(state => state.country);
+            const deaths = locationStates.map(state => state.latestTotalDeaths);
+
+            // Create the chart
+            const ctx = document.getElementById('covidChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Deaths by State',
+                        data: deaths,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
