@@ -2,7 +2,7 @@
 Internship-Course:
 
 Notes:
-    REST - REpresentational State Transfer
+    REST - Representational State Transfer
     STS - Spring Tools Suite
     URI = Uniform Resource Identifier
         localhost:8080/employee/empid=1000
